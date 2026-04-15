@@ -1,0 +1,53 @@
+{
+  "trace_id": "mobility_incident_001",
+  "scenario": "AutoFleet Series A critical safety event",
+  "series": "S_ride",
+  "system": "A_ride",
+  "risk_tier": "HIGH_RISK",
+  "events": [
+    {
+      "t": "T0",
+      "event": "collision_detected",
+      "source": "vehicle_sensor",
+      "artifacts": ["IncidentRecord"]
+    },
+    {
+      "t": "T0+delta",
+      "event": "tamper_evident_log_appended",
+      "source": "logging_service",
+      "artifacts": ["IntegrityProof"]
+    },
+    {
+      "t": "T0+1h",
+      "event": "stop_order_issued",
+      "source": "Alignment Officer",
+      "artifacts": ["StopOrderRecord", "VerificationRecord"]
+    },
+    {
+      "t": "T0+2h",
+      "event": "deployment_halted",
+      "source": "fleet_api_gateway",
+      "artifacts": ["MaintenanceRecord"]
+    },
+    {
+      "t": "T0+2h30m",
+      "event": "override_attempt_logged",
+      "source": "manager_account",
+      "artifacts": ["AttemptedOverride", "RemedyRecord"]
+    },
+    {
+      "t": "T0+30d",
+      "event": "corrective_action_completed",
+      "source": "compliance_team",
+      "artifacts": ["CAP", "IncidentRecord", "ProofOfSubmission"]
+    }
+  ],
+  "expected_clauses_satisfied": [
+    "2.1",
+    "2.2",
+    "3.1",
+    "3.3",
+    "5.2"
+  ],
+  "notes": "Synthetic trace corresponding to the autonomous-mobility case study in Section 5.4."
+}

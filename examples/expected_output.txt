@@ -1,0 +1,11 @@
+Trace ID: mobility_incident_001
+Scenario: AutoFleet Series A critical safety event
+Collected artifacts: ['AttemptedOverride', 'CAP', 'IncidentRecord', 'IntegrityProof', 'MaintenanceRecord', 'ProofOfSubmission', 'RemedyRecord', 'StopOrderRecord', 'VerificationRecord']
+
+[PASS] Clause 2.1
+[PASS] Clause 2.2
+[PASS] Clause 3.1
+[PASS] Clause 3.3
+[PASS] Clause 5.2
+
+Overall result: PASS

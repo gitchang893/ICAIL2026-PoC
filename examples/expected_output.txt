@@ -1,3 +1,7 @@
+ICAIL2026-PoC-main> python checker/trace_checker.py traces/mobility_incident_trace.json
+Trace ID: mobility_incident_001
+Scenario: AutoFleet Series A critical safety event
+Collected artifacts: ['AttemptedOverride', 'CAP', 'IncidentRecord', 'IntegrityProof', 'MaintenanceRecord', 'ProofOfSubmission', 'RemedyRecord', 'StopOrderRecord', 'VerificationRecord']
 Trace ID: mobility_incident_001
 Scenario: AutoFleet Series A critical safety event
 Collected artifacts: ['AttemptedOverride', 'CAP', 'IncidentRecord', 'IntegrityProof', 'MaintenanceRecord', 'ProofOfSubmission', 'RemedyRecord', 'StopOrderRecord', 'VerificationRecord']

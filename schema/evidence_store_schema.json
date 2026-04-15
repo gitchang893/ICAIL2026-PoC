@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence Store Schema",
+  "description": "Minimal schema for audit-relevant evidence artifacts used in the Governance-by-Design PoC.",
+  "type": "object",
+  "properties": {
+    "evidence_store_id": {
+      "type": "string"
+    },
+    "series": {
+      "type": "string"
+    },
+    "system": {
+      "type": "string"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "artifact_type": {
+            "type": "string"
+          },
+          "artifact_id": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "related_clause": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "artifact_type",
+          "artifact_id",
+          "timestamp",
+          "source"
+        ]
+      }
+    }
+  },
+  "required": [
+    "evidence_store_id",
+    "series",
+    "system",
+    "artifacts"
+  ]
+}

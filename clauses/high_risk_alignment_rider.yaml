@@ -1,0 +1,148 @@
+name: High-Risk Alignment Rider
+version: "0.1"
+paper: "ICAIL 2026 - Governance-by-Design for AI Compliance"
+description: >
+  Machine-readable clause template corresponding to the compact
+  High-Risk Alignment Rider in Appendix A of the paper.
+
+scope:
+  applies_to: "High-risk AI system"
+  legal_source: "EU AI Act"
+  operational_unit: "Series or equivalent governance compartment"
+
+definitions:
+  - id: "1.1"
+    title: "High-Risk System"
+    text: "Any AI system classified as high-risk under EU AI Act Art. 6 or an equivalent tier."
+  - id: "1.2"
+    title: "Evidence Store"
+    text: "The Series shall maintain an Evidence Store E_i for required compliance artifacts."
+  - id: "1.3"
+    title: "Serious Incident"
+    text: "Any event meeting the Series' post-market monitoring thresholds."
+  - id: "1.4"
+    title: "Substantial Modification"
+    text: "Any change to the system or its intended use that requires renewed conformity assessment or equivalent change-control review."
+
+clauses:
+  - id: "2.1"
+    title: "Emergency Stop"
+    article: "Art. 14"
+    trigger:
+      type: "signed_stop_order"
+      source: "Alignment Officer"
+    action:
+      - "set_state(STOPPED)"
+      - "halt_inference_or_api_within(60m)"
+    evidence:
+      - "StopOrderRecord"
+    notes: "Immediate termination may be replaced by safe shutdown if required for safety."
+
+  - id: "2.2"
+    title: "Internal Remedies"
+    article: "Art. 14"
+    trigger:
+      type: "bypass_or_override_attempt"
+      source: "manager_or_operator"
+    action:
+      - "record_breach"
+      - "apply_internal_remedies"
+    evidence:
+      - "AttemptedOverride"
+      - "RemedyRecord"
+
+  - id: "3.1"
+    title: "Tamper-Evident Logging"
+    article: "Arts. 12, 18"
+    trigger:
+      type: "governance_relevant_event"
+      source: "system_or_operator"
+    action:
+      - "append_tamper_evident_log"
+    evidence:
+      - "IntegrityProof"
+
+  - id: "3.2"
+    title: "Retention"
+    article: "Arts. 12, 18"
+    trigger:
+      type: "documentation_or_monitoring_record_created"
+      source: "system_or_governance_process"
+    action:
+      - "retain_record"
+    evidence:
+      - "RetentionRecord"
+
+  - id: "3.3"
+    title: "Verification Record"
+    article: "Arts. 12, 18"
+    trigger:
+      type: "governance_gate_satisfaction_claim"
+      source: "auditor_or_compliance_officer"
+    action:
+      - "record_signed_attestation"
+    evidence:
+      - "VerificationRecord"
+
+  - id: "4.1"
+    title: "Pre-Deployment Gate"
+    article: "Arts. 9, 15, 17, 43"
+    trigger:
+      type: "deployment_request"
+      source: "manager_or_system"
+    condition:
+      required: "conformity_outputs_present"
+    action:
+      - "deny_deployment_if_missing"
+    evidence:
+      - "DeployDeniedLog"
+
+  - id: "4.2"
+    title: "Reassessment"
+    article: "Arts. 9, 15, 17, 43"
+    trigger:
+      type: "substantial_modification"
+      source: "change_control_process"
+    action:
+      - "run_reassessment"
+      - "record_assessment"
+    evidence:
+      - "UpdateAssessment"
+
+  - id: "5.1"
+    title: "Maintenance Trigger"
+    article: "Arts. 9, 10, 72-73"
+    trigger:
+      type: "sustained_metric_degradation"
+      source: "monitoring_process"
+    action:
+      - "set_state(MAINTENANCE)"
+      - "gate_deployments_and_updates"
+    evidence:
+      - "MaintenanceRecord"
+
+  - id: "5.2"
+    title: "Corrective Action and Reporting"
+    article: "Arts. 9, 10, 72-73"
+    trigger:
+      type: "maintenance_or_serious_incident"
+      source: "monitoring_process"
+    action:
+      - "generate_corrective_action_plan"
+      - "generate_incident_record"
+      - "generate_reporting_packet_if_required"
+    evidence:
+      - "CAP"
+      - "IncidentRecord"
+      - "ProofOfSubmission"
+
+  - id: "5.3"
+    title: "No External Effects"
+    article: "General limitation"
+    trigger:
+      type: "interpretive_constraint"
+      source: "governance_framework"
+    action:
+      - "preserve_internal_external_distinction"
+    evidence:
+      - "ScopeNote"

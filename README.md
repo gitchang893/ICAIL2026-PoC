@@ -58,6 +58,7 @@ Collected artifacts: ['AttemptedOverride', 'CAP', 'IncidentRecord', 'IntegrityPr
 Overall result: PASS
 
 ```
+The same output is also provided in `examples/expected_output.txt`.
 
 ## Scope
 

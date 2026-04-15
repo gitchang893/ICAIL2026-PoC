@@ -28,6 +28,20 @@ The repository illustrates how regulatory duties can be represented as computabl
 - `examples/`  
   Example outputs and sample files.
 
+## Example scenarios
+
+This repository includes two synthetic execution traces.
+
+### 1. Critical safety incident (`traces/mobility_incident_trace.json`)
+
+Series A (`S_ride`) represents a high-risk urban autonomous-mobility deployment. During operation, a collision occurs, generating an `IncidentRecord` from vehicle sensors and logs. The record is then committed in tamper-evident form, producing an `IntegrityProof`. After reviewing the evidence, the Alignment Officer issues a `STOP` order, causing the system to transition into the `STOPPED` state and halting inference/API serving. If a manager attempts to bypass the stop order, the attempt is recorded through `AttemptedOverride` and `RemedyRecord`. The workflow concludes with a corrective action plan (`CAP`) and, where required, an external reporting packet, with `ProofOfSubmission` preserved in the evidence store.
+
+This scenario illustrates the paper’s central claim that regulatory duties can be operationalized as **trigger-action-evidence (TAE)** controls: the incident is the trigger, the emergency stop is the action, and the resulting records (such as `StopOrderRecord` and `ProofOfSubmission`) constitute the evidence. In this way, governance simultaneously constrains authority and produces audit-relevant records during operation.
+
+### 2. Normal compliant deployment (`traces/normal_operation_trace.json`)
+
+This trace represents a normal high-risk deployment in which the required conformity outputs, verification records, logging artifacts, and scheduled audit records are all present. Because the relevant governance gates are satisfied, deployment proceeds without emergency intervention. The scenario shows how the same framework supports routine compliant operation, not only exceptional incident handling.
+
 ## How to run
 
 Run the checker from the repository root:
@@ -42,7 +56,7 @@ The script reads a synthetic trace, collects the evidence artifacts recorded in 
 
 ## Example output
 
-Example output for the mobility incident trace:
+### 1. Example output for the mobility incident trace:
 
 ```text
 Trace ID: mobility_incident_001
@@ -56,9 +70,27 @@ Collected artifacts: ['AttemptedOverride', 'CAP', 'IncidentRecord', 'IntegrityPr
 [PASS] Clause 5.2
 
 Overall result: PASS
-
 ```
 The same output is also provided in `examples/expected_output.txt`.
+
+### 2. Example output for the normal compliant deployment:
+
+```text
+Trace ID: normal_operation_001
+Scenario: AutoFleet Series A normal compliant deployment
+Collected artifacts: ['AuditReport', 'DeployApprovalRecord', 'IntegrityProof', 'RetentionRecord', 'UpdateAssessment', 'VerificationRecord']
+
+[PASS] Clause 3.1
+[PASS] Clause 3.2
+[PASS] Clause 3.3
+[PASS] Clause 4.1
+  Note: Either denial or approval evidence satisfies the gate outcome.
+[PASS] Clause 4.2
+  Note: Either reassessment or audit output is accepted.
+
+Overall result: PASS
+```
+The same output is also provided in `examples/expected_output2.txt`.
 
 ## Scope
 

@@ -1,0 +1,14 @@
+ICAIL2026-PoC-main> python checker/trace_checker.py traces/normal_operation_trace.json
+Trace ID: normal_operation_001
+Scenario: AutoFleet Series A normal compliant deployment
+Collected artifacts: ['AuditReport', 'DeployApprovalRecord', 'IntegrityProof', 'RetentionRecord', 'UpdateAssessment', 'VerificationRecord']
+
+[PASS] Clause 3.1
+[PASS] Clause 3.2
+[PASS] Clause 3.3
+[PASS] Clause 4.1
+  Note: Either denial or approval evidence satisfies the gate outcome.
+[PASS] Clause 4.2
+  Note: Either reassessment or audit output is accepted.
+
+Overall result: PASS

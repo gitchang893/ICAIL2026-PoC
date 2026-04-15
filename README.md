@@ -7,7 +7,7 @@ This repository provides a minimal proof-of-concept (PoC) companion artifact for
 
 **Governance-by-Design for AI Compliance: Compiling EU AI Act Duties into Computable Operating-Agreement Clauses**
 
-## Purpose
+## Overview
 
 The repository illustrates how regulatory duties can be represented as computable governance clauses with trigger-action-evidence (TAE) semantics. It is intended as a reproducibility companion for the paper's formal model, rider template, and case-study trace.
 
@@ -27,6 +27,37 @@ The repository illustrates how regulatory duties can be represented as computabl
 
 - `examples/`  
   Example outputs and sample files.
+
+## How to run
+
+Run the checker from the repository root:
+
+```bash
+python checker/trace_checker.py traces/mobility_incident_trace.json
+python checker/trace_checker.py traces/normal_operation_trace.json
+
+```
+
+The script reads a synthetic trace, collects the evidence artifacts recorded in the trace, and checks whether the expected trigger-action-evidence (TAE) clauses are satisfied.
+
+## Example output
+
+Example output for the mobility incident trace:
+
+```text
+Trace ID: mobility_incident_001
+Scenario: AutoFleet Series A critical safety event
+Collected artifacts: ['AttemptedOverride', 'CAP', 'IncidentRecord', 'IntegrityProof', 'MaintenanceRecord', 'ProofOfSubmission', 'RemedyRecord', 'StopOrderRecord', 'VerificationRecord']
+
+[PASS] Clause 2.1
+[PASS] Clause 2.2
+[PASS] Clause 3.1
+[PASS] Clause 3.3
+[PASS] Clause 5.2
+
+Overall result: PASS
+
+```
 
 ## Scope
 

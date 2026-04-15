@@ -62,7 +62,7 @@ The same output is also provided in `examples/expected_output.txt`.
 
 ## Scope
 
-This repository is a minimal research artifact. It is not production software, not legal advice, and not a complete compliance system.
+This repository is a research artifact intended to support reproducibility of the paper's formal model, rider template, and case-study workflow. It is not production software, not legal advice, and not a complete compliance system.
 
 ## Relation to the paper
 

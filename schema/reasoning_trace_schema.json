@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reasoning Trace Schema",
+  "description": "Minimal schema for reasoning-trace evidence artifacts.",
+  "type": "object",
+  "properties": {
+    "trace_id": { "type": "string" },
+    "task": { "type": "string" },
+    "actor": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "reasoning_summary": { "type": "string" },
+    "output": { "type": "object" },
+    "integrity_proof": { "type": "string" }
+  },
+  "required": [
+    "trace_id",
+    "task",
+    "actor",
+    "timestamp",
+    "reasoning_summary",
+    "output"
+  ]
+}

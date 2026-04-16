@@ -1,0 +1,49 @@
+{
+  "trace_id": "reasoning_trace_001",
+  "scenario": "LLM agent safety-critical recommendation with approval gate",
+  "agent": "mobility-agent-v1",
+  "events": [
+    {
+      "t": "T0",
+      "event": "high_impact_decision_requested",
+      "source": "operator_console",
+      "artifacts": []
+    },
+    {
+      "t": "T0+1m",
+      "event": "reasoning_trace_generated",
+      "source": "llm_agent",
+      "artifacts": ["ReasoningTraceRecord"]
+    },
+    {
+      "t": "T0+2m",
+      "event": "integrity_proof_attached",
+      "source": "trace_service",
+      "artifacts": ["IntegrityProof"]
+    },
+    {
+      "t": "T0+5m",
+      "event": "human_approval_recorded",
+      "source": "alignment_officer",
+      "artifacts": ["ApprovalRecord"]
+    },
+    {
+      "t": "T0+6m",
+      "event": "decision_executed",
+      "source": "execution_gateway",
+      "artifacts": ["DecisionRecord"]
+    },
+    {
+      "t": "T0+30d",
+      "event": "reconstruction_packet_generated",
+      "source": "audit_team",
+      "artifacts": ["ReconstructionPacket"]
+    }
+  ],
+  "expected_clauses_satisfied": [
+    "RT-1",
+    "RT-2",
+    "RT-3",
+    "RT-5"
+  ]
+}

@@ -1,0 +1,76 @@
+name: Reasoning Trace Governance Clauses
+version: "0.1"
+description: >
+  Machine-readable governance clauses for preserving AI reasoning traces
+  as verifiable business records.
+
+definitions:
+  - id: "R1"
+    title: "Reasoning Trace"
+    text: "A structured record of an AI agent's decision process, including task, inputs, tools invoked, reasoning summary, output, actor, timestamp, and integrity metadata."
+  - id: "R2"
+    title: "Sensitive Reasoning Trace"
+    text: "A reasoning trace containing confidential, privileged, personal, or safety-sensitive information."
+  - id: "R3"
+    title: "Decision Record"
+    text: "A final auditable record linking a reasoning trace to the action taken, approval status, and evidence references."
+
+clauses:
+  - id: "RT-1"
+    title: "Trace Generation"
+    trigger:
+      type: "high_impact_ai_decision"
+    action:
+      - "generate_reasoning_trace"
+    evidence:
+      - "ReasoningTraceRecord"
+
+  - id: "RT-2"
+    title: "Tamper-Evident Preservation"
+    trigger:
+      type: "reasoning_trace_created"
+    action:
+      - "attach_integrity_proof"
+      - "store_tamper_evidently"
+    evidence:
+      - "IntegrityProof"
+
+  - id: "RT-3"
+    title: "Approval Gate"
+    trigger:
+      type: "high_risk_or_safety_critical_output"
+    action:
+      - "require_human_approval_before_execution"
+    evidence:
+      - "ApprovalRecord"
+
+  - id: "RT-4"
+    title: "Sensitive Trace Handling"
+    trigger:
+      type: "sensitive_trace_detected"
+    action:
+      - "apply_access_control"
+      - "apply_redaction_or_restricted_retention"
+    evidence:
+      - "AccessControlRecord"
+      - "RedactionRecord"
+
+  - id: "RT-5"
+    title: "Reconstruction Duty"
+    trigger:
+      type: "audit_or_dispute_request"
+    action:
+      - "retrieve_trace_and_decision_record"
+      - "generate_reconstruction_packet"
+    evidence:
+      - "ReconstructionPacket"
+
+  - id: "RT-6"
+    title: "Override Logging"
+    trigger:
+      type: "trace_override_or_deletion_attempt"
+    action:
+      - "block_unauthorized_change"
+      - "log_authorized_override"
+    evidence:
+      - "OverrideRecord"

@@ -28,6 +28,7 @@ The repository illustrates how regulatory duties can be represented as computabl
 - `examples/`  
   Example outputs and sample files.
 
+
 ## Example scenarios
 
 This repository includes two synthetic execution traces.
@@ -42,6 +43,12 @@ This scenario illustrates the paper’s central claim that regulatory duties can
 
 This trace represents a normal high-risk deployment in which the required conformity outputs, verification records, logging artifacts, and scheduled audit records are all present. Because the relevant governance gates are satisfied, deployment proceeds without emergency intervention. The scenario shows how the same framework supports routine compliant operation, not only exceptional incident handling.
 
+## Additional reasoning-trace scenario (`traces/reasoning_trace_example.jso`)
+
+The reasoning-trace PoC models a safety-critical LLM-agent decision workflow. An agent is asked to produce a recommendation or decision in a high-impact setting. Before the decision is executed, the system generates a structured `ReasoningTraceRecord`, attaches an `IntegrityProof`, and stores both as tamper-evident evidence artifacts. Because the output is classified as high-risk or safety-critical, execution is gated until a designated human reviewer records an `ApprovalRecord`. At a later stage, an audit or dispute request triggers generation of a `ReconstructionPacket`, linking the reasoning trace, the approval record, and the final decision outcome.
+
+This scenario illustrates how AI reasoning can be preserved not merely as transient model output, but as a verifiable governance record. In that sense, the PoC shows how reasoning traces can function as evidentiary artifacts that connect technical decision processes to organizational accountability, auditability, and review.
+
 ## EU AI Act coverage
 
 The current Python checker does not directly implement the EU AI Act as statutory text. Rather, it implements the paper’s clause-level operationalization of selected EU AI Act duties, as summarized in **Table 1** and instantiated in **Appendix A** (High-Risk Alignment Rider).
@@ -55,6 +62,42 @@ In particular, the current PoC covers:
 
 The checker therefore validates whether the expected evidence artifacts for these trigger-action-evidence (TAE) clauses are present in the supplied synthetic traces. It is a research PoC and does not attempt full legal compliance determination under the EU AI Act.
 
+## Repository components
+
+### Core Governance-by-Design PoC
+
+- `clauses/high_risk_alignment_rider.yaml`  
+  A machine-readable clause template corresponding to the High-Risk Alignment Rider in Appendix A.
+
+- `traces/mobility_incident_trace.json`  
+  A synthetic execution trace for the critical safety-incident scenario in the autonomous-mobility case study.
+
+- `traces/normal_operation_trace.json`  
+  A synthetic execution trace for a normal compliant high-risk deployment without emergency escalation.
+
+- `checker/trace_checker.py`  
+  A minimal checker for trigger-action-evidence (TAE) clause satisfaction over the supplied synthetic traces.
+
+- `schema/evidence_store_schema.json`  
+  A minimal schema for audit-relevant evidence artifacts stored in the evidence store.
+
+- `examples/expected_output.txt`  
+  An example output file illustrating the expected checker result.
+
+### Additional reasoning-trace PoC
+
+- `clauses/reasoning_trace_clauses.yaml`  
+  Machine-readable governance clauses for reasoning-trace preservation.
+
+- `traces/reasoning_trace_example.json`  
+  A synthetic trace showing trace generation, integrity preservation, human approval, and reconstruction.
+
+- `checker/reasoning_trace_checker.py`  
+  A minimal checker for clause satisfaction over the reasoning-trace example.
+
+- `schema/reasoning_trace_schema.json`  
+  A minimal schema for reasoning-trace evidence artifacts.
+
 ## How to run
 
 Run the checker from the repository root:
@@ -62,6 +105,11 @@ Run the checker from the repository root:
 ```bash
 python checker/trace_checker.py traces/mobility_incident_trace.json
 python checker/trace_checker.py traces/normal_operation_trace.json
+
+```
+
+```bash
+python checker/reasoning_trace_checker.py traces/reasoning_trace_example.json
 
 ```
 
@@ -104,6 +152,21 @@ Collected artifacts: ['AuditReport', 'DeployApprovalRecord', 'IntegrityProof', '
 Overall result: PASS
 ```
 The same output is also provided in `examples/expected_output2.txt`.
+
+### 3. Example output for reasoning trace:
+
+```tet
+Trace ID: reasoning_trace_001
+Scenario: LLM agent safety-critical recommendation with approval gate
+Collected artifacts: ['ApprovalRecord', 'DecisionRecord', 'IntegrityProof', 'ReasoningTraceRecord', 'ReconstructionPacket']
+
+[PASS] Clause RT-1
+[PASS] Clause RT-2
+[PASS] Clause RT-3
+[PASS] Clause RT-5
+
+Overall result: PASS
+```
 
 ## Scope
 

@@ -1,0 +1,45 @@
+name: Series B Transparency and Controlled Deployment Rider
+version: "0.1"
+description: >
+  Governance rider for Series B (fleet scheduling and routing),
+  emphasizing transparency, controlled deployment, and documentation.
+
+inherits:
+  - "base_governance_rider.yaml"
+
+clauses:
+  - id: "B-1"
+    title: "Transparency Notice"
+    trigger:
+      type: "ai_assisted_decision_exposed_to_client_or_user"
+    action:
+      - "issue_transparency_notice"
+    evidence:
+      - "TransparencyNoticeRecord"
+
+  - id: "B-2"
+    title: "Deployment Approval Logging"
+    trigger:
+      type: "deployment_request"
+    action:
+      - "record_approval_or_denial"
+    evidence:
+      - "DeployApprovalRecord"
+
+  - id: "B-3"
+    title: "Incident Escalation"
+    trigger:
+      type: "service_incident_or_material_performance_failure"
+    action:
+      - "escalate_to_manager_review"
+    evidence:
+      - "IncidentEscalationRecord"
+
+  - id: "B-4"
+    title: "Periodic Governance Review"
+    trigger:
+      type: "scheduled_review"
+    action:
+      - "perform_governance_review"
+    evidence:
+      - "GovernanceReviewRecord"

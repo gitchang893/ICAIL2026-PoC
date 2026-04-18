@@ -98,6 +98,20 @@ The checker therefore validates whether the expected evidence artifacts for thes
 - `schema/reasoning_trace_schema.json`  
   A minimal schema for reasoning-trace evidence artifacts.
 
+ ### Series-specific rider templates
+
+- `clauses/base_governance_rider.yaml`  
+  Common governance clauses applicable across all series.
+
+- `clauses/series_a_high_risk_rider.yaml`  
+  High-risk rider for Series A (urban autonomous mobility), corresponding to the paper’s emergency-stop, logging, verification, and reporting logic.
+
+- `clauses/series_b_transparency_rider.yaml`  
+  Governance rider for Series B (fleet scheduling/routing), emphasizing transparency, approval logging, escalation, and periodic review.
+
+- `clauses/series_c_internal_monitoring_rider.yaml`  
+  Lightweight governance rider for Series C (predictive maintenance), focusing on internal logging, update traceability, anomaly review, and maintenance action records. 
+
 ## How to run
 
 Run the checker from the repository root:

@@ -1,0 +1,38 @@
+{
+  "trace_id": "series_c_monitoring_001",
+  "scenario": "Series C predictive maintenance internal monitoring workflow",
+  "series": "Series C",
+  "rider": "series_c_internal_monitoring_rider.yaml",
+  "events": [
+    {
+      "t": "T0",
+      "event": "internal_alert_generated",
+      "source": "maintenance_model",
+      "artifacts": ["InternalLogRecord"]
+    },
+    {
+      "t": "T0+10m",
+      "event": "model_update_recorded",
+      "source": "ml_ops_pipeline",
+      "artifacts": ["ModelUpdateRecord"]
+    },
+    {
+      "t": "T0+30m",
+      "event": "anomaly_review_completed",
+      "source": "engineering_team",
+      "artifacts": ["AnomalyReviewRecord"]
+    },
+    {
+      "t": "T0+1h",
+      "event": "maintenance_action_linked",
+      "source": "maintenance_service",
+      "artifacts": ["MaintenanceActionRecord"]
+    }
+  ],
+  "expected_clauses_satisfied": [
+    "C-1",
+    "C-2",
+    "C-3",
+    "C-4"
+  ]
+}

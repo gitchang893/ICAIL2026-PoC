@@ -120,6 +120,62 @@ The checker therefore validates whether the expected evidence artifacts for thes
 - `schema/reasoning_trace_schema.json`  
   A minimal schema for reasoning-trace evidence artifacts.
 
+## Rider construction method for EU AI Act-oriented governance
+
+The rider templates in this repository follow a two-layer construction method for operationalizing selected EU AI Act duties into computable governance clauses.
+
+### 1. Fundamental (common) layer
+
+The first layer contains **fundamental governance clauses** that apply across all series, regardless of risk tier. These clauses establish the baseline organizational infrastructure required for computable governance, including:
+
+- maintenance of an evidence store;
+- baseline governance-event logging;
+- audit access and retrieval duties;
+- override logging and traceability of governance interventions.
+
+In the repository, this common layer is represented by:
+
+- `clauses/base_governance_rider.yaml`
+
+Conceptually, this corresponds to the paper’s idea of a shared governance substrate (`C_base`) that provides the minimal authority, logging, and audit framework for all deployments.
+
+### 2. Risk-based (series-specific) layer
+
+The second layer contains **risk-based rider modules** that are added on top of the common layer according to the regulatory and operational profile of a given series. These modules implement different governance intensities for different deployment contexts.
+
+In the repository, this produces three series-specific riders:
+
+- `clauses/series_a_high_risk_rider.yaml`  
+  A **high-risk rider** for Series A, adding emergency stop authority, strict evidence verification, tamper-evident logging, pre-deployment gates, and corrective-action/reporting workflows.
+
+- `clauses/series_b_transparency_rider.yaml`  
+  A **limited-risk / transparency-oriented rider** for Series B, adding transparency notice, deployment approval logging, escalation, and periodic governance review.
+
+- `clauses/series_c_internal_monitoring_rider.yaml`  
+  A **minimal-risk / internal monitoring rider** for Series C, adding lightweight internal logging, update traceability, anomaly review, and maintenance-action accountability.
+
+### Construction principle
+
+The overall construction principle is therefore:
+
+**Series-specific Rider = Fundamental Governance Layer + Risk-Based Layer**
+
+or, in the terminology of the paper:
+
+**OA_i = C_base ∪ C_tier ∪ C_context**
+
+where:
+
+- `C_base` provides the common governance substrate;
+- `C_tier` adds the risk-tier-specific governance intensity;
+- `C_context` captures deployment-specific constraints where needed.
+
+Under this method, the three series riders are not independent ad hoc documents. Rather, they are structured instantiations of the same modular governance design, with different risk-based supplements layered onto a shared fundamental governance core.
+
+### Relation to the paper
+
+This construction method mirrors the paper’s modular governance architecture. Series A corresponds most closely to the paper’s worked high-risk case study, while Series B and Series C provide PoC elaborations of the paper’s limited-risk and minimal-risk tiers. Together, they show how the same governance-by-design method can generate different operating-agreement riders for heterogeneous AI deployments.
+
  ### Series-specific rider templates
 
  In addition to the compact High-Risk Alignment Rider discussed in the paper, this repository provides a more explicit set of series-specific rider templates corresponding to the three-series architecture used in the case-study discussion. These rider templates should be understood as PoC instantiations that further elaborate the paper’s modular governance design.

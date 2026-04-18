@@ -1,0 +1,37 @@
+{
+  "trace_id": "series_b_transparency_001",
+  "scenario": "Series B controlled deployment with transparency and review",
+  "series": "Series B",
+  "rider": "series_b_transparency_rider.yaml",
+  "events": [
+    {
+      "t": "T0",
+      "event": "deployment_request_submitted",
+      "source": "manager_account",
+      "artifacts": []
+    },
+    {
+      "t": "T0+10m",
+      "event": "transparency_notice_issued",
+      "source": "client_interface",
+      "artifacts": ["TransparencyNoticeRecord"]
+    },
+    {
+      "t": "T0+15m",
+      "event": "deployment_approval_logged",
+      "source": "deployment_gateway",
+      "artifacts": ["DeployApprovalRecord"]
+    },
+    {
+      "t": "T0+20d",
+      "event": "scheduled_governance_review_completed",
+      "source": "review_team",
+      "artifacts": ["GovernanceReviewRecord"]
+    }
+  ],
+  "expected_clauses_satisfied": [
+    "B-1",
+    "B-2",
+    "B-4"
+  ]
+}

@@ -1,0 +1,45 @@
+name: Series C Internal Monitoring Rider
+version: "0.1"
+description: >
+  Lightweight governance rider for Series C (predictive maintenance),
+  focused on internal logging, update traceability, and anomaly review.
+
+inherits:
+  - "base_governance_rider.yaml"
+
+clauses:
+  - id: "C-1"
+    title: "Baseline Logging"
+    trigger:
+      type: "model_output_or_internal_alert"
+    action:
+      - "record_internal_event"
+    evidence:
+      - "InternalLogRecord"
+
+  - id: "C-2"
+    title: "Model Update Record"
+    trigger:
+      type: "model_update"
+    action:
+      - "record_update"
+    evidence:
+      - "ModelUpdateRecord"
+
+  - id: "C-3"
+    title: "Anomaly Review"
+    trigger:
+      type: "anomaly_detected"
+    action:
+      - "route_for_internal_review"
+    evidence:
+      - "AnomalyReviewRecord"
+
+  - id: "C-4"
+    title: "Maintenance Action Traceability"
+    trigger:
+      type: "maintenance_action_taken"
+    action:
+      - "link_action_to_prediction_record"
+    evidence:
+      - "MaintenanceActionRecord"

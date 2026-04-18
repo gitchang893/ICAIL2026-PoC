@@ -1,0 +1,59 @@
+name: Series A High-Risk Alignment Rider
+version: "0.1"
+description: >
+  High-risk governance rider for Series A (urban autonomous mobility),
+  corresponding to the paper's Appendix A logic.
+
+inherits:
+  - "base_governance_rider.yaml"
+
+clauses:
+  - id: "A-1"
+    title: "Emergency Stop"
+    trigger:
+      type: "serious_incident_or_severity_threshold"
+    action:
+      - "set_state(STOPPED)"
+      - "halt_inference_or_api_within(60m)"
+    evidence:
+      - "StopOrderRecord"
+
+  - id: "A-2"
+    title: "Tamper-Evident Logging"
+    trigger:
+      type: "governance_relevant_event"
+    action:
+      - "append_tamper_evident_log"
+    evidence:
+      - "IntegrityProof"
+
+  - id: "A-3"
+    title: "Verification Record"
+    trigger:
+      type: "governance_gate_satisfaction_claim"
+    action:
+      - "record_signed_verification"
+    evidence:
+      - "VerificationRecord"
+
+  - id: "A-4"
+    title: "Pre-Deployment Gate"
+    trigger:
+      type: "deployment_request"
+    condition:
+      required: "conformity_outputs_present"
+    action:
+      - "deny_deployment_if_missing"
+    evidence:
+      - "DeployDeniedLog"
+
+  - id: "A-5"
+    title: "Corrective Action and Reporting"
+    trigger:
+      type: "maintenance_or_serious_incident"
+    action:
+      - "generate_corrective_action_plan"
+      - "generate_reporting_packet_if_required"
+    evidence:
+      - "CAP"
+      - "ProofOfSubmission"

@@ -110,7 +110,18 @@ The checker therefore validates whether the expected evidence artifacts for thes
   Governance rider for Series B (fleet scheduling/routing), emphasizing transparency, approval logging, escalation, and periodic review.
 
 - `clauses/series_c_internal_monitoring_rider.yaml`  
-  Lightweight governance rider for Series C (predictive maintenance), focusing on internal logging, update traceability, anomaly review, and maintenance action records. 
+  Lightweight governance rider for Series C (predictive maintenance), focusing on internal logging, update traceability, anomaly review, and maintenance action records.
+
+### Series-specific synthetic traces
+
+- `traces/series_a_incident_trace.json`  
+  A high-risk incident scenario for Series A, covering emergency stop, tamper-evident logging, verification, and corrective-action/reporting steps.
+
+- `traces/series_b_transparency_trace.json`  
+  A controlled-deployment scenario for Series B, covering transparency notice, approval logging, and periodic governance review.
+
+- `traces/series_c_internal_monitoring_trace.json`  
+  An internal monitoring workflow for Series C, covering alert logging, model update traceability, anomaly review, and maintenance action linkage.  
 
 ## How to run
 

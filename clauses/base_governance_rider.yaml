@@ -1,0 +1,53 @@
+name: Base Governance Rider
+version: "0.1"
+description: >
+  Common governance clauses applicable across all series-level
+  operating-agreement modules.
+
+definitions:
+  - id: "B1"
+    title: "Evidence Store"
+    text: "Each series shall maintain an evidence store E_i for governance-relevant records."
+  - id: "B2"
+    title: "Governance-Relevant Event"
+    text: "Any deployment, denial, override, incident, update, approval, or audit-relevant event."
+  - id: "B3"
+    title: "Authorized Role"
+    text: "Any manager, officer, auditor, or designated reviewer authorized under the applicable operating-agreement module."
+
+clauses:
+  - id: "BG-1"
+    title: "Evidence Store Maintenance"
+    trigger:
+      type: "series_operational"
+    action:
+      - "maintain_evidence_store"
+    evidence:
+      - "EvidenceStoreRecord"
+
+  - id: "BG-2"
+    title: "Baseline Governance Logging"
+    trigger:
+      type: "governance_relevant_event"
+    action:
+      - "record_event"
+    evidence:
+      - "GovernanceLogRecord"
+
+  - id: "BG-3"
+    title: "Audit Access"
+    trigger:
+      type: "audit_request"
+    action:
+      - "provide_evidence_access"
+    evidence:
+      - "AuditAccessRecord"
+
+  - id: "BG-4"
+    title: "Override Logging"
+    trigger:
+      type: "override_attempt"
+    action:
+      - "log_override_attempt"
+    evidence:
+      - "OverrideRecord"

@@ -1,0 +1,44 @@
+{
+  "trace_id": "series_a_incident_001",
+  "scenario": "Series A high-risk autonomous mobility incident",
+  "series": "Series A",
+  "rider": "series_a_high_risk_rider.yaml",
+  "events": [
+    {
+      "t": "T0",
+      "event": "serious_incident_detected",
+      "source": "vehicle_sensor",
+      "artifacts": ["IncidentRecord"]
+    },
+    {
+      "t": "T0+5m",
+      "event": "tamper_evident_log_recorded",
+      "source": "logging_service",
+      "artifacts": ["IntegrityProof"]
+    },
+    {
+      "t": "T0+20m",
+      "event": "verification_recorded",
+      "source": "auditor",
+      "artifacts": ["VerificationRecord"]
+    },
+    {
+      "t": "T0+30m",
+      "event": "stop_order_issued",
+      "source": "alignment_officer",
+      "artifacts": ["StopOrderRecord"]
+    },
+    {
+      "t": "T0+2d",
+      "event": "corrective_action_and_reporting_completed",
+      "source": "compliance_team",
+      "artifacts": ["CAP", "ProofOfSubmission"]
+    }
+  ],
+  "expected_clauses_satisfied": [
+    "A-1",
+    "A-2",
+    "A-3",
+    "A-5"
+  ]
+}

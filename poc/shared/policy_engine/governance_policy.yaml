@@ -1,0 +1,156 @@
+version: "0.1.0"
+policy_name: "series_llc_ai_governance_policy"
+default_timezone: "UTC"
+
+risk_tiers:
+  minimal:
+    label: "minimal"
+    description: "Baseline governance only"
+    clause_formula: "Cbase only"
+    requires:
+      baseline_logging: true
+      change_control: true
+      incident_escalation: true
+      reclassification_review: true
+    prohibits:
+      - "customer_facing_use_without_reclassification"
+      - "rights_affecting_use_without_reclassification"
+      - "external_operational_reliance_without_reclassification"
+
+  limited:
+    label: "limited"
+    description: "Baseline governance plus transparency duties"
+    clause_formula: "Cbase ∪ Ctransparency"
+    requires:
+      baseline_logging: true
+      change_control: true
+      incident_escalation: true
+      reclassification_review: true
+      user_notice: true
+      scope_documentation: true
+      material_change_documentation: true
+      workflow_dependence_monitor: true
+    prohibits:
+      - "high_risk_use_without_reclassification"
+      - "self_authorizing_outputs"
+      - "concealed_material_workflow_dependence"
+
+  high:
+    label: "high"
+    description: "Baseline governance plus high-risk controls"
+    clause_formula: "Cbase ∪ Chigh"
+    requires:
+      baseline_logging: true
+      change_control: true
+      incident_escalation: true
+      deployment_gate: true
+      expansion_gate: true
+      reactivation_gate: true
+      trigger_action_evidence: true
+      audit_readiness: true
+      independent_review_capability: true
+    prohibits:
+      - "operation_outside_approved_odd"
+      - "deployment_without_gate"
+      - "reactivation_without_clearance"
+      - "concealment_of_safety_critical_event"
+
+series_profiles:
+  SeriesA:
+    series_name: "Urban Ride-Hailing"
+    risk_tier: "high"
+    allowed_functions:
+      - "autonomous_taxi_operations"
+      - "dispatch_support"
+      - "route_assignment"
+      - "remote_assistance"
+    prohibited_functions:
+      - "operation_outside_approved_odd"
+      - "unapproved_geographic_expansion"
+      - "deployment_without_gate"
+      - "reactivation_without_clearance"
+    boundary_checks:
+      customer_facing_allowed: true
+      rights_affecting_allowed: true
+      external_effects_allowed: true
+
+  SeriesB:
+    series_name: "Executive Fleet Leasing"
+    risk_tier: "limited"
+    allowed_functions:
+      - "scheduling"
+      - "routing"
+      - "allocation"
+      - "dispatch_support"
+      - "optimization_support"
+    prohibited_functions:
+      - "final_rights_affecting_determinations"
+      - "high_risk_use_without_reclassification"
+      - "self_authorizing_outputs"
+    boundary_checks:
+      customer_facing_allowed: false
+      rights_affecting_allowed: false
+      external_effects_allowed: true
+
+  SeriesC:
+    series_name: "Predictive Maintenance"
+    risk_tier: "minimal"
+    allowed_functions:
+      - "failure_forecasting"
+      - "maintenance_planning_support"
+      - "internal_operational_analytics"
+    prohibited_functions:
+      - "customer_facing_deployment"
+      - "rights_affecting_use"
+      - "external_commercialization_without_reclassification"
+    boundary_checks:
+      customer_facing_allowed: false
+      rights_affecting_allowed: false
+      external_effects_allowed: false
+
+global_reclassification_triggers:
+  - "rights_affecting_use_detected"
+  - "customer_facing_use_detected"
+  - "material_external_effect_detected"
+  - "repeated_incidents_exceed_threshold"
+  - "material_workflow_dependence_detected"
+  - "approved_boundary_expansion_requested"
+  - "safety_critical_event_detected"
+
+thresholds:
+  workflow_dependence:
+    default_acceptance_rate_without_edit: 0.90
+    review_window_days: 14
+
+  repeated_incidents:
+    default_count: 3
+    default_window_days: 30
+
+  odd_deviation:
+    trigger_on_any_confirmed_deviation: true
+
+actions:
+  on_boundary_violation:
+    - "deny_action"
+    - "log_event"
+    - "open_incident"
+    - "notify_responsible_personnel"
+
+  on_reclassification_trigger:
+    - "log_event"
+    - "open_tier_review"
+    - "notify_responsible_personnel"
+
+  on_high_risk_trigger_event:
+    - "log_event"
+    - "open_incident"
+    - "suspend_operation"
+    - "collect_trigger_action_evidence"
+    - "notify_safety_officer"
+
+documentation:
+  required_refs:
+    - "series_registry"
+    - "clause_to_control_matrix"
+    - "state_machines"
+    - "evidence_model"

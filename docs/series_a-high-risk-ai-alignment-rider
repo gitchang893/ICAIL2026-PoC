@@ -1,4 +1,4 @@
-# Series A High-Risk AI Alignment Rider
+# Series A High-Risk AI Alignment Rider (Recital Version)
 
 ## Series-Level Addendum to Limited Liability Company Agreement
 
@@ -7,6 +7,26 @@ This Series A High-Risk AI Alignment Rider (this “Rider”) is adopted as an E
 This Rider is intended to govern a **High-Risk AI Use Case**, as such term is defined in Section 2.2 below and as further described in the Series Schedule, Use Case Register, or equivalent internal designation record of the Company.
 
 In the event of any inconsistency between this Rider and the LLC Agreement, this Rider shall control solely with respect to Series A and solely to the extent of such inconsistency.
+
+---
+
+## RECITALS
+
+WHEREAS, the Company acknowledges that certain AI-assisted and agentic systems may be used in contexts in which their outputs, recommendations, actions, or failures may materially affect legal rights, legal obligations, compliance posture, financial interests, safety, security, or other substantial interests;
+
+WHEREAS, the Company further acknowledges that the ethical and legal governance of such systems cannot be reduced to a demand for fuller internal explainability alone, but also requires an identifiable institutional unit capable of bearing oversight duties, preserving reviewability, constraining operational purpose, and allocating responsibility;
+
+WHEREAS, the Company has determined that a **series-based organizational structure** may serve as a purpose-bound governance mechanism for specified AI use cases by concentrating oversight, change control, escalation pathways, and accountability at a defined legal and operational node;
+
+WHEREAS, Series A is intended to serve as the Company’s dedicated unit for a specified **High-Risk AI Use Case**, and not as a general-purpose AI experimentation vehicle or a repository for unrelated deployments;
+
+WHEREAS, the Company intends that Series A shall operate subject to defined use-case boundaries, designated human oversight, deployment gating, change management, suspension and shutdown authority, incident escalation, and such other governance controls as are appropriate to high-risk operation;
+
+WHEREAS, the Company further intends that responsibility for the governance, deployment, supervision, and external effects of AI Systems used by or for Series A shall remain with the Company, Series A, and the relevant natural persons acting on their behalf, and shall not be deemed transferred to the AI System itself;
+
+WHEREAS, the Company desires to implement this Rider in order to formalize the foregoing principles in a binding governance instrument applicable to Series A;
+
+NOW, THEREFORE, the Company hereby adopts this Rider as follows:
 
 ---
 
@@ -28,7 +48,11 @@ The purpose of this Rider is to establish a governance framework for Series A as
 
 Series A shall function as the Company’s designated governance, deployment, and accountability unit for the applicable High-Risk AI Use Case. Series A shall not operate as a general-purpose vehicle for unrelated AI activities.
 
-### Section 1.3 No Independent AI Personhood
+### Section 1.3 Interpretive Principle
+
+This Rider shall be interpreted to preserve the role of Series A as a purpose-bound governance and accountability unit for a High-Risk AI Use Case, and not as an instrument for diluting, evading, or displacing human or entity responsibility.
+
+### Section 1.4 No Independent AI Personhood
 
 Nothing in this Rider shall be construed as recognizing independent legal personhood, consciousness, sentience, agency in law, or moral status of any AI System. All authority, responsibility, and accountability under this Rider remain with the Company, Series A, and the relevant natural persons acting on their behalf.
 
@@ -73,6 +97,10 @@ Nothing in this Rider shall be construed as recognizing independent legal person
 
 “Critical Event” means any incident, output, action, recommendation, malfunction, breach, unauthorized access, unsafe behavior, prohibited drift, compliance failure, or other event that could materially impair legality, safety, fairness, reliability, security, or accountability.
 
+### Section 2.8 “Independent Review”
+
+“Independent Review” means a review, audit, assessment, or governance evaluation conducted by persons or bodies not directly responsible for the day-to-day operation of the AI System at issue.
+
 ---
 
 ## ARTICLE III  
@@ -99,6 +127,10 @@ The Company shall maintain a written purpose record for Series A identifying, at
 (c) the class of decisions, recommendations, or outputs involved;  
 (d) the required human-review threshold; and  
 (e) the legal, compliance, or safety rationale for high-risk treatment.
+
+### Section 3.5 Purpose Integrity
+
+Any ambiguity concerning the scope of Series A’s authorized function shall be resolved in favor of narrower operation pending clarification by the Manager or other designated authority.
 
 ---
 
@@ -137,6 +169,10 @@ The Human Oversight Officer, the AI Compliance Manager, the Manager, and any oth
 
 Any person acting for Series A who becomes aware of a Critical Event shall promptly escalate the matter to the Human Oversight Officer and Incident Response Lead.
 
+### Section 4.6 Reviewability Principle
+
+Series A shall be operated in a manner reasonably designed to permit review of material decisions, actions, overrides, and escalations by authorized human actors.
+
 ---
 
 ## ARTICLE V  
@@ -169,6 +205,10 @@ Where a Material Change could affect safety, legality, reliability, external imp
 ### Section 5.5 Restricted Experimental Use
 
 Experimental, sandboxed, or exploratory use involving Series A’s High-Risk AI Use Case shall remain subject to this Rider and shall not be used to avoid deployment controls.
+
+### Section 5.6 No Silent Expansion
+
+No expansion in operational scope, affected population, decision significance, or degree of autonomy shall occur without documented approval under this Article V.
 
 ---
 
@@ -206,6 +246,10 @@ No person acting for Series A shall knowingly use the AI System:
 
 No output of the AI System shall, by itself, constitute sufficient authorization for final action in a High-Risk AI Use Case.
 
+### Section 6.5 Alignment with Series Purpose
+
+All use of the AI System by or for Series A shall be interpreted and controlled in light of the approved purpose of Series A and the Company’s stated governance objectives for the relevant High-Risk AI Use Case.
+
 ---
 
 ## ARTICLE VII  
@@ -235,6 +279,10 @@ Reliance on a third-party provider shall not, by itself, eliminate or reduce Ser
 ### Section 7.4 Tool and Integration Control
 
 No external tool, plugin, retrieval source, or connected service shall be enabled for Series A unless approved through the applicable governance process.
+
+### Section 7.5 Substitute Review Materials
+
+Where provider limitations restrict direct inspection of internal model processes, Series A shall obtain and preserve such substitute governance materials as are reasonably available, including service descriptions, change notices, audit artifacts, evaluation summaries, or provider assurances.
 
 ---
 
@@ -273,6 +321,10 @@ Corrective measures may include:
 
 Where a Critical Event results in suspension, Series A shall not resume the affected deployment unless authorized by the Human Oversight Officer or other designated authority after documented review.
 
+### Section 8.5 Harm-Minimization Principle
+
+Where uncertainty exists regarding the legality, safety, reliability, or governance adequacy of continued operation, Series A shall favor temporary restriction, escalation, or pause over continued unreviewed operation.
+
 ---
 
 ## ARTICLE IX  
@@ -302,6 +354,10 @@ Such review may address, as applicable:
 
 The Manager may require internal governance reports, risk reports, incident reports, or board-level reporting concerning Series A.
 
+### Section 9.5 Corrective Governance Action
+
+Findings from Independent Review may support narrowing of operational scope, redesign of oversight pathways, additional conditions of deployment, reassignment of authority, or discontinuation of the use case within Series A.
+
 ---
 
 ## ARTICLE X  
@@ -322,6 +378,10 @@ Where a task or function is delegated across series or to external service units
 ### Section 10.4 Containment Objective
 
 The purpose of separateness under this Article is to reduce spillover of governance failure, legal exposure, unsafe operational practice, and control breakdown across unrelated use cases.
+
+### Section 10.5 No Evasion by Internal Reallocation
+
+No transfer, delegation, or internal restructuring shall be used to evade the approval, review, incident, or accountability requirements applicable to Series A.
 
 ---
 

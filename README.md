@@ -7,12 +7,6 @@ This repository explores how Delaware Series LLC structures can serve as purpose
 Rather than treating AI ethics as a question of explainability alone, it emphasizes human authority, controlled deployment, reviewability, and retained organizational responsibility.  
 It contains draft legal riders, governance frameworks, and related research materials.
 
-## Clause Architecture
-
-This repository models AI governance in Series LLC form through a modular clause architecture.  
-`Cbase` denotes baseline governance clauses applicable across all AI-related series, while additional clause sets are layered according to risk tier: `Chigh` for high-risk use cases and `Ctransparency` for limited-risk use cases.  
-Accordingly, the operating agreement formulas are expressed as `OAride = Cbase ∪ Chigh`, `OAfleet = Cbase ∪ Ctransparency`, and `OAmaint = Cbase only`.
-
 ## Legal Drafts for ICAIL-2026 paper
 
 - [Series A High-Risk AI Alignment Rider](docs/series_a-urban-ride-hailing-high-risk-rider.md)  
@@ -31,6 +25,12 @@ Accordingly, the operating agreement formulas are expressed as `OAride = Cbase �
 | **Series A** | Urban Ride-Hailing | **High-Risk** | `OAride = Cbase ∪ Chigh` | Oversight gates, trigger-action-evidence clauses, audit readiness, evidence preservation, suspension/reactivation controls |
 | **Series B** | Executive Fleet Leasing | **Limited-Risk** | `OAfleet = Cbase ∪ Ctransparency` | Baseline governance plus user notice, documentation, transparency, and reclassification safeguards |
 | **Series C** | Predictive Maintenance | **Minimal-Risk** | `OAmaint = Cbase only` | Baseline logging, change control, incident escalation, and accountability with minimal overhead |
+
+## Clause Architecture
+
+This repository models AI governance in Series LLC form through a modular clause architecture.  
+`Cbase` denotes baseline governance clauses applicable across all AI-related series, while additional clause sets are layered according to risk tier: `Chigh` for high-risk use cases and `Ctransparency` for limited-risk use cases.  
+Accordingly, the operating agreement formulas are expressed as `OAride = Cbase ∪ Chigh`, `OAfleet = Cbase ∪ Ctransparency`, and `OAmaint = Cbase only`.
 
 ## Re-Factoring Legal Drafts for ICAIL-2026 Paper
 

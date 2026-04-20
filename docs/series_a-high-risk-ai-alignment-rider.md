@@ -410,3 +410,198 @@ This Rider shall survive dissolution, winding up, transfer, merger, conversion, 
 ### Section 11.4 Governing Law
 
 This Rider shall be governed by the laws of the State of Delaware, without regard to conflicts-of-law principles, except to the extent mandatory non-waivable law applies.
+
+---
+
+## SCHEDULE 1  
+## AUTHORIZED BUSINESS AND HIGH-RISK USE CASE DESCRIPTION OF SERIES A
+
+This Schedule 1 is adopted for the limited purpose of identifying the authorized business of Series A and describing the High-Risk AI Use Case contemplated by this Rider. This Schedule 1 is intended to aid interpretation and administration of the Rider and shall not, by itself, expand the Approved Use Case Boundary except to the extent expressly approved pursuant to the LLC Agreement and the governance procedures of the Company.
+
+### Section 1.1 Authorized Character of Business
+
+Series A shall be organized and operated solely as a purpose-bound operating and governance unit for a High-Risk AI Use Case in which an AI System is used to support, generate, recommend, classify, prioritize, route, escalate, or partially execute outputs or actions that may reasonably be expected to have material legal, regulatory, contractual, financial, or comparable external effect.
+
+### Section 1.2 Authorized Business Categories
+
+Subject to the Approved Use Case Boundary, the authorized business of Series A may include only the following categories of activity, to the extent specifically approved by the Company:
+
+(a) AI-assisted legal operations, including contract review, clause analysis, redline generation, issue spotting, legal triage, and document classification;  
+
+(b) AI-assisted regulatory and compliance operations, including preparation, review, routing, prioritization, or escalation of filings, reports, notices, certifications, or internal compliance actions;  
+
+(c) AI-assisted decision-support functions affecting rights, obligations, eligibility, priority, escalation, risk treatment, or comparable high-impact determinations, provided that such functions remain subject to the human-approval requirements set forth in this Rider;  
+
+(d) AI-assisted workflow operations involving legally or operationally significant communications, submissions, approvals, holds, notices, or payment-adjacent processes; and  
+
+(e) such other high-risk, rights-affecting, or compliance-sensitive business activities as may be specifically authorized in writing by the Company and incorporated into the Approved Use Case Boundary.
+
+### Section 1.3 Excluded Activities
+
+Unless expressly approved in writing pursuant to the LLC Agreement and the applicable governance procedures, Series A shall not be used for:
+
+(a) general-purpose experimentation unrelated to the approved High-Risk AI Use Case;  
+
+(b) open-ended deployment for multiple unrelated business lines;  
+
+(c) autonomous final decision-making without the human review required by this Rider; or  
+
+(d) any activity that would materially expand the scope, affected population, external impact, or autonomy level of the approved High-Risk AI Use Case without re-approval.
+
+### Section 1.4 Assumed Operational Conditions
+
+For purposes of interpreting this Rider, the High-Risk AI Use Case of Series A shall be understood to contemplate one or more of the following operational conditions:
+
+(a) outputs of the AI System may be relied upon, directly or indirectly, in matters affecting legal rights, legal obligations, compliance posture, contractual position, financial exposure, or comparable substantial interests;  
+
+(b) the AI System may influence prioritization, classification, routing, escalation, or preliminary resolution of matters that are later reviewed by human decision-makers;  
+
+(c) the AI System may be connected to tools, repositories, workflow engines, communication systems, or other external interfaces capable of producing real-world legal, operational, or financial effects; and  
+
+(d) affected persons or counterparties may have limited or no direct visibility into the internal operation of the AI System, such that governance, review, and accountability must be supplied by the Company, Series A, and designated natural persons.
+
+### Section 1.5 Governing Characterization
+
+Series A shall be characterized, for all purposes of this Rider, as a dedicated high-risk operating and accountability unit and not as a mere experimental sandbox, data repository, technical subsystem, or passive liability compartment.
+
+---
+
+## SCHEDULE 2  
+## ILLUSTRATIVE RISK EVENTS, INCIDENT CATEGORIES, AND GOVERNANCE FAILURES
+
+This Schedule 2 is adopted for the limited purpose of identifying the types of incidents, failures, disputes, and governance concerns for which this Rider is intended to provide a control structure. The categories listed below are illustrative and non-exclusive. Inclusion in this Schedule 2 shall not be construed to create independent authorization for any activity otherwise prohibited by the Rider.
+
+### Section 2.1 Output-Related Risk Events
+
+Illustrative output-related risk events include:
+
+(a) generation of materially inaccurate, incomplete, misleading, or legally defective outputs;  
+
+(b) generation of erroneous legal, regulatory, or compliance-related recommendations;  
+
+(c) fabricated, hallucinatory, or otherwise unsupported citations, authorities, or factual assertions;  
+
+(d) material misclassification, misprioritization, or misrouting of matters, persons, accounts, files, or transactions;  
+
+(e) omission of material exceptions, warnings, escalation conditions, or compliance requirements; and  
+
+(f) presentation of plausible but unreliable output in circumstances in which human reviewers may reasonably over-rely on such output.
+
+### Section 2.2 Action-Related Risk Events
+
+Where the AI System is connected to tools, workflows, or external interfaces, illustrative action-related risk events include:
+
+(a) unauthorized or premature submission, dispatch, filing, routing, notice, payment-related action, or comparable workflow execution;  
+
+(b) initiation or continuation of an action without the human approval required by this Rider;  
+
+(c) transmission to an incorrect system, repository, recipient, or counterparty;  
+
+(d) propagation of erroneous action across multiple systems, workflows, or business units;  
+
+(e) continuation of operation after suspension, override, or shutdown should have occurred; and  
+
+(f) creation of external effects materially exceeding the approved role or scope of the AI System.
+
+### Section 2.3 Governance and Oversight Failures
+
+Illustrative governance and oversight failures include:
+
+(a) operation outside the Approved Use Case Boundary;  
+
+(b) failure to designate, maintain, or empower the responsible persons required by this Rider;  
+
+(c) formal but substantively inadequate human review, including rubber-stamp approval;  
+
+(d) implementation of a Material Change without the review, revalidation, or approval required by this Rider;  
+
+(e) unapproved expansion of tool scope, data scope, autonomy level, or affected population; and  
+
+(f) failure to suspend, narrow, or escalate operations after the occurrence of a Critical Event.
+
+### Section 2.4 Vendor, Provider, and Integration Risks
+
+Illustrative third-party and integration risks include:
+
+(a) undisclosed or inadequately disclosed changes in model, service, provider behavior, tool connectivity, or performance characteristics;  
+
+(b) material degradation in reliability, consistency, or safety of a provider-supported function;  
+
+(c) inadequate cooperation by a provider in connection with investigation, remediation, or review of a Critical Event;  
+
+(d) activation of external tools, plugins, retrieval sources, or connected services without required approval;  
+
+(e) ambiguity concerning allocation of responsibility as between Series A and a third-party provider; and  
+
+(f) dependence on systems or services whose opacity materially impairs governance, review, or safe operation.
+
+### Section 2.5 Data, Confidentiality, and Security Risks
+
+Illustrative data, confidentiality, and security risks include:
+
+(a) unauthorized access to confidential, privileged, proprietary, regulated, or otherwise sensitive information;  
+
+(b) disclosure, leakage, or misuse of data across internal boundaries, across series, or to unauthorized external recipients;  
+
+(c) prompt injection, data poisoning, manipulation through connected sources, or analogous integrity-compromising events;  
+
+(d) unsafe or overbroad invocation of tools, permissions, or integrations;  
+
+(e) compromise of governance controls through excessive access permissions or unreviewed automation; and  
+
+(f) use of connected systems in a manner inconsistent with applicable legal, contractual, or policy restrictions.
+
+### Section 2.6 External Harm and Rights-Affecting Events
+
+Illustrative external harm and rights-affecting events include:
+
+(a) improper denial, delay, escalation, or burdening of a person or organization as a result of inaccurate or defective AI-supported assessment;  
+
+(b) issuance of legally significant but materially defective communications, recommendations, notices, or submissions;  
+
+(c) adverse treatment resulting from inappropriate reliance on AI-supported classifications, summaries, or rankings;  
+
+(d) contractual, financial, regulatory, or reputational harm arising from defective AI-assisted operation; and  
+
+(e) any materially harmful effect on persons, counterparties, customers, regulated entities, or governmental bodies arising from operation of the High-Risk AI Use Case.
+
+### Section 2.7 Dispute and Enforcement Matters
+
+Without limitation, this Rider contemplates that disputes, enforcement actions, or internal investigations may arise concerning:
+
+(a) whether Series A acted within the Approved Use Case Boundary;  
+
+(b) whether the human approval required by this Rider was in fact performed in substance and not merely in form;  
+
+(c) whether a Material Change required review, revalidation, or redeployment approval;  
+
+(d) whether responsible persons failed to escalate, suspend, narrow, or remediate operations following a Critical Event;  
+
+(e) whether the Company or Series A maintained adequate separateness, containment, and governance controls; and  
+
+(f) whether ultimate responsibility remained appropriately allocated to the Company, Series A, and relevant natural persons rather than being impermissibly displaced onto the AI System.
+
+### Section 2.8 Interpretive Use of Schedule 2
+
+The incident and risk categories set forth in this Schedule 2 may be used, as appropriate, in connection with:
+
+(a) deployment gating;  
+
+(b) change-control review;  
+
+(c) risk assessment;  
+
+(d) incident escalation and response;  
+
+(e) independent review or audit;  
+
+(f) remedial action; and  
+
+(g) interpretation of the purpose, scope, and control requirements applicable to Series A under this Rider.
+
+---
+
+## SCHEDULE 3  
+## INTERPRETIVE PRINCIPLE
+
+This Rider, including Schedules 1 through 3, shall be interpreted on the premise that the central governance question presented by a High-Risk AI Use Case is not merely whether an AI System can generate an explanation, but whether an identifiable organizational unit can constrain operational purpose, preserve human authority, implement review and intervention, respond to incidents, and remain answerable for the external effects of AI-assisted operations. Series A is therefore intended to function as a purpose-bound operating and accountability unit of the Company.

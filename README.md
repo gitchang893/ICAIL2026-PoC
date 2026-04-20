@@ -215,6 +215,9 @@ The checker therefore validates whether the expected evidence artifacts for thes
 - [PoC Policy and Schemas](poc/shared/)  
   Includes the shared governance policy, event schema, evidence schemas, and initial tier policy logic for the executable PoC governance layer.
 
+- [PoC Change Control Scaffolds](poc/shared/change_control/)  
+  Includes initial Python scaffolds for event storage, material change request handling, and approval workflow management in the executable governance layer.
+
 ## Rider construction method for EU AI Act-oriented governance
 
 The rider templates in this repository follow a two-layer construction method for operationalizing selected EU AI Act duties into computable governance clauses.

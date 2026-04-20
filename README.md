@@ -224,6 +224,16 @@ The checker therefore validates whether the expected evidence artifacts for thes
 - [Series A Runtime Scaffolds](poc/series_a/), [Series B Runtime Scaffolds](poc/series_b/), [Series C Runtime Scaffolds](poc/series_c/)  
   Includes initial series-specific Python scaffolds for Series A deployment gates, Series B workflow-dependence monitoring, and Series C promotion blocking.
 
+- Scenario replay: [Series A deployment gate](poc/scenarios/series_a_deployment_request.json), [Series B dependence drift](poc/scenarios/series_b_routing_dependence_drift.json), [Series C promotion attempt](poc/scenarios/series_c_customer_facing_promotion_attempt.json), and [runner](poc/run_scenario.py)
+
+## How to Run
+
+```bash
+python poc/run_scenario.py poc/scenarios/series_a_deployment_request.json --write-summary
+python poc/run_scenario.py poc/scenarios/series_b_routing_dependence_drift.json --write-summary
+python poc/run_scenario.py poc/scenarios/series_c_customer_facing_promotion_attempt.json --write-summary
+```
+
 ## Rider construction method for EU AI Act-oriented governance
 
 The rider templates in this repository follow a two-layer construction method for operationalizing selected EU AI Act duties into computable governance clauses.

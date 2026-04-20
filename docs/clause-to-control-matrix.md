@@ -95,10 +95,12 @@ Its PoC layer must implement all `Cbase` controls plus the `Chigh` controls belo
 
 ### 3.3 Series A State Machine
 
-```text id="53169"
+```text
 draft -> gated -> active -> trigger_event -> suspended -> reviewed -> reactivated
                                                 \-> terminated
+```
 
+---
 
 ## 4. Series B (Executive Fleet Leasing) = `Cbase ∪ Ctransparency`
 
@@ -122,14 +124,14 @@ Its PoC layer must implement all `Cbase` controls plus the `Ctransparency` contr
 
 **Scenario:** Routing tool becomes heavily relied upon by dispatch staff.
 
-1. `workflow_dependence_monitor` observes increasing acceptance rate without edits
-2. threshold crossed -> generate `DEPENDENCE_ALERT`
-3. `incident_service` or `tier_review_service` opens review ticket
-4. `document_store` updates operational dependence memo
-5. responsible manager decides:
-   - remain limited-risk with extra training
-   - narrow use
-   - trigger reclassification review
+1. `workflow_dependence_monitor` observes increasing acceptance rate without edits  
+2. threshold crossed -> generate `DEPENDENCE_ALERT`  
+3. `incident_service` or `tier_review_service` opens review ticket  
+4. `document_store` updates operational dependence memo  
+5. responsible manager decides:  
+   - remain limited-risk with extra training  
+   - narrow use  
+   - trigger reclassification review  
 
 ### 4.3 Series B State Machine
 
@@ -139,3 +141,130 @@ draft -> approved -> active -> dependence_alert -> review
                                  |                 -> remain_B
                                  |                 -> narrowed
                                  \-> reclassification_trigger -> transferred
+```
+
+---
+
+## 5. Series C (Predictive Maintenance) = `Cbase only`
+
+Series C is the minimal-risk tier use case.  
+Its PoC layer implements `Cbase` only, with no `Chigh` or `Ctransparency` supplements unless separately adopted.
+
+### 5.1 Series C Cbase Emphasis
+
+| Clause | Operational Emphasis for Series C | Control Object / Service | Output / Evidence |
+|---|---|---|---|
+| `Cbase §3.1 Purpose Limitation` | Internal predictive maintenance only | `policy_engine` | boundary compliance log |
+| `Cbase §3.5 Change Control` | Model/provider/sensor-input changes tracked | `change_control_service` | change record |
+| `Cbase §3.6 Baseline Logging` | Minimal logging burden preserved | `event_store` | version/incident log |
+| `Cbase §3.7 Incident Escalation` | Significant false-signal patterns escalated | `incident_service` | incident ticket |
+| `Cbase §3.8 No Unapproved Higher-Risk Migration` | Prevents customer-facing or rights-affecting repurposing | `tier_review_service` | promotion review |
+
+### 5.2 Series C Representative PoC Workflow
+
+**Scenario:** Internal predictive-maintenance model is proposed for customer-facing service guarantees.
+
+1. business owner submits scope change  
+2. `policy_engine` flags request as outside approved use case  
+3. `tier_review_service` classifies as possible migration beyond minimal-risk  
+4. system blocks direct promotion inside Series C  
+5. Company must either:  
+   - reject  
+   - narrow proposal  
+   - transfer use case to Series B or Series A structure  
+
+### 5.3 Series C State Machine
+
+```text
+draft -> approved -> active -> material_change_review -> remain_C
+                                              \
+                                               -> tier_review -> transferred
+```
+
+---
+
+## 6. Cross-Series Event Model
+
+The PoC should treat the following as shared governance events:
+
+| Event | Description | Typical Consumer |
+|---|---|---|
+| `DEPLOYMENT_REQUESTED` | Initial deployment or go-live request | gatekeeper / approval service |
+| `MATERIAL_CHANGE_SUBMITTED` | Change to model, provider, tools, workflow, or scope | change control service |
+| `INCIDENT_REPORTED` | Incident or anomaly requiring attention | incident service |
+| `OVERRIDE_EXECUTED` | Human override, narrowing, suspension, or termination | event store / audit layer |
+| `RECLASSIFICATION_TRIGGERED` | Possible mismatch between current tier and observed use | tier review service |
+| `AUDIT_EXPORT_REQUESTED` | Export for internal audit, litigation, or regulator review | evidence or review export service |
+
+---
+
+## 7. Evidence Model
+
+All series should produce at least a baseline evidence object:
+
+```json
+{
+  "series_id": "SeriesA",
+  "risk_tier": "high",
+  "event_type": "INCIDENT_REPORTED",
+  "timestamp": "2026-04-20T12:00:00Z",
+  "actor": "incident_service",
+  "system_version": "v3.4.1",
+  "approved_boundary_reference": "registry/series_a.json",
+  "decision": "suspended",
+  "reviewer": "Safety Officer",
+  "artifacts": [
+    "telemetry_hash_1",
+    "route_log_hash_2",
+    "approval_record_hash_3"
+  ]
+}
+```
+
+For Series A, this baseline evidence object should expand into a formal **Trigger-Action-Evidence Record**.
+
+---
+
+## 8. Minimal PoC Implementation Roadmap
+
+### Phase 1: Shared Cbase Layer
+
+Implement:
+
+- `series_registry`
+- `policy_engine`
+- `change_control_service`
+- `incident_service`
+- `event_store`
+- `tier_review_service`
+
+### Phase 2: Series-Specific Modules
+
+Implement:
+
+- Series A: `deployment_gatekeeper`, `trigger_detector`, `evidence_bundle_service`, `reactivation_gate`
+- Series B: `user_notice_service`, `workflow_dependence_monitor`, `reclassification_review`
+- Series C: `minimal logging profile`, `promotion blocker`
+
+### Phase 3: Scenario Replay
+
+Implement replayable test scenarios:
+
+- Series A: near-collision and suspension
+- Series B: routing dependence drift
+- Series C: attempted promotion to customer-facing use
+
+---
+
+## 9. Interpretation
+
+This matrix is intended to show that the rider architecture can be translated into an executable governance layer.  
+The PoC is therefore not merely a technical implementation of isolated controls, but an operational expression of the series-level legal architecture itself.
+
+In this formulation:
+
+- `Cbase` becomes the shared governance runtime
+- `Chigh` becomes the high-risk control overlay
+- `Ctransparency` becomes the limited-risk transparency overlay
+
+The result is a programmable governance structure aligned with the clause-set formulas used in the paper.

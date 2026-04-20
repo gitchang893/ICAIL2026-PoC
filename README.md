@@ -1,4 +1,4 @@
-# icail2026-governance-by-design
+# ICAIL2026-Governance-by-Design
 Companion repository for the ICAIL 2026 paper on Governance-by-Design
 
 ## Legal Drafts
@@ -28,16 +28,16 @@ It contains draft legal riders, governance frameworks, and related research mate
 
 ## Additional Legal Drafts
 
-- [Series A High-Risk AI Alignment Rider](docs/series_a-high-risk-ai-alignment-rider.md)  
+- [Series 1 High-Risk AI Alignment Rider](docs/series_a-high-risk-ai-alignment-rider.md)  
   A Delaware Series LLC operating agreement rider for a high-risk AI use case, establishing purpose-binding, human oversight, deployment gates, override and shutdown authority, incident escalation, and organizational accountability.
 
-- [Series B Standard-Risk AI Governance Rider](docs/series_b-standard-risk-ai-governance-rider.md)  
+- [Series 2 Standard-Risk AI Governance Rider](docs/series_b-standard-risk-ai-governance-rider.md)  
   A Delaware Series LLC rider for standard-risk AI use cases, emphasizing purpose limitation, human supervision, change control, reclassification triggers, and containment of drift into high-risk deployment.
 
-- [Series C Experimental AI Sandbox Rider](docs/series_c-experimental-ai-sandbox-rider.md)  
+- [Series 3 Experimental AI Sandbox Rider](docs/series_c-experimental-ai-sandbox-rider.md)  
   A Delaware Series LLC rider for experimental and sandbox AI use cases, emphasizing purpose limitation, sandbox isolation, human supervision, transition review, and prevention of premature production deployment.
 
-  - [Delaware High-Risk Alignment Rider Draft](docs/delaware-high-risk-ai-alighment-rider.md)  
+- [Delaware High-Risk Alignment Rider Draft](docs/delaware-high-risk-ai-alighment-rider.md)  
   Series-level addendum to a Delaware LLC operating agreement for trace governance,
   evidentiary preservation, purpose-binding, human oversight, and accountability in
   AI-assisted and agentic operations.
@@ -46,9 +46,9 @@ It contains draft legal riders, governance frameworks, and related research mate
 
 | Series | Rider | Primary Use Case | Core Governance Function | Escalation Path |
 |---|---|---|---|---|
-| **Series A** | [Series A High-Risk AI Alignment Rider](docs/series_a-high-risk-ai-alignment-rider.md) | High-risk AI use cases with potentially material effects on rights, obligations, compliance, safety, or other substantial interests | Purpose-binding, human oversight, deployment gates, override and shutdown authority, incident escalation, and retained organizational responsibility | Independent review, heightened controls, suspension, shutdown, or reassignment |
-| **Series B** | [Series B Standard-Risk AI Governance Rider](docs/series_b-standard-risk-ai-governance-rider.md) | Standard-risk AI use cases such as drafting, summarization, workflow support, and internal operational assistance | Purpose limitation, human supervision, change control, reclassification triggers, and containment of drift into high-risk deployment | Reclassification to heightened governance or transfer to another series |
-| **Series C** | [Series C Experimental AI Sandbox Rider](docs/series_c-experimental-ai-sandbox-rider.md) | Experimental, research, testing, red-teaming, benchmarking, prototype, and sandbox use cases | Sandbox isolation, controlled testing, limited data and tool access, transition review, and prevention of premature production deployment | Transition to Series B or Series A, narrowing, or termination of the experiment |
+| **Series 1** | [Series A High-Risk AI Alignment Rider](docs/series_a-high-risk-ai-alignment-rider.md) | High-risk AI use cases with potentially material effects on rights, obligations, compliance, safety, or other substantial interests | Purpose-binding, human oversight, deployment gates, override and shutdown authority, incident escalation, and retained organizational responsibility | Independent review, heightened controls, suspension, shutdown, or reassignment |
+| **Series 2** | [Series B Standard-Risk AI Governance Rider](docs/series_b-standard-risk-ai-governance-rider.md) | Standard-risk AI use cases such as drafting, summarization, workflow support, and internal operational assistance | Purpose limitation, human supervision, change control, reclassification triggers, and containment of drift into high-risk deployment | Reclassification to heightened governance or transfer to another series |
+| **Series 3** | [Series C Experimental AI Sandbox Rider](docs/series_c-experimental-ai-sandbox-rider.md) | Experimental, research, testing, red-teaming, benchmarking, prototype, and sandbox use cases | Sandbox isolation, controlled testing, limited data and tool access, transition review, and prevention of premature production deployment | Transition to Series 2 or Series 1, narrowing, or termination of the experiment |
 
 
 # Governance-by-Design PoC

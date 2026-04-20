@@ -1,7 +1,7 @@
 # ICAIL2026-Governance-by-Design
 Companion repository for the ICAIL 2026 paper on Governance-by-Design
 
-## Legal Drafts
+# Legal Drafts
 
 This repository explores how Delaware Series LLC structures can serve as purpose-bound governance units for high-risk AI use cases.  
 Rather than treating AI ethics as a question of explainability alone, it emphasizes human authority, controlled deployment, reviewability, and retained organizational responsibility.  

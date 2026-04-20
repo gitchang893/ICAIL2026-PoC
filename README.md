@@ -32,7 +32,7 @@ This repository models AI governance in Series LLC form through a modular clause
 `Cbase` denotes baseline governance clauses applicable across all AI-related series, while additional clause sets are layered according to risk tier: `Chigh` for high-risk use cases and `Ctransparency` for limited-risk use cases.  
 Accordingly, the operating agreement formulas are expressed as `OAride = Cbase ∪ Chigh`, `OAfleet = Cbase ∪ Ctransparency`, and `OAmaint = Cbase only`.
 
-## Re-Factoring Legal Drafts for ICAIL-2026 Paper
+## Re-Factoring Legal Drafts for ICAIL-2026 Paper by the Modular Clause Architecture
 
 - [Common Cbase AI Governance Rider](docs/common-cbase-ai-governance-rider.md)  
   A baseline Delaware Series LLC governance rider providing common clauses for purpose limitation, human responsibility, change control, baseline logging, and incident escalation across AI-related series.

@@ -198,6 +198,20 @@ The checker therefore validates whether the expected evidence artifacts for thes
 - `schema/reasoning_trace_schema.json`  
   A minimal schema for reasoning-trace evidence artifacts.
 
+### Modular Implementation for PoC Implementation
+
+
+README 追記用の 1 行はこれで置けます。
+
+```md id="poc-layout-readme-entry"
+- [PoC Implementation Layout](docs/poc-implementation-layout.md)  
+  Outlines a modular proof-of-concept implementation for the rider architecture, mapping `Cbase`, `Chigh`, and `Ctransparency` to shared services, series-specific overlays, and replayable governance scenarios.
+
+- [State Machines](docs/state-machines.md)  
+  Describes the operational lifecycle of Series A, B, and C as governed state machines, including deployment, incident, review, suspension, reclassification, and transfer states.
+
+
+```
 ## Rider construction method for EU AI Act-oriented governance
 
 The rider templates in this repository follow a two-layer construction method for operationalizing selected EU AI Act duties into computable governance clauses.

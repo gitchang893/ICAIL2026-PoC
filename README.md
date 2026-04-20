@@ -234,6 +234,13 @@ python poc/run_scenario.py poc/scenarios/series_b_routing_dependence_drift.json 
 python poc/run_scenario.py poc/scenarios/series_c_customer_facing_promotion_attempt.json --write-summary
 ```
 
+```bash
+make install
+make init-dirs
+make scenarios
+make summary
+```
+
 ## Rider construction method for EU AI Act-oriented governance
 
 The rider templates in this repository follow a two-layer construction method for operationalizing selected EU AI Act duties into computable governance clauses.

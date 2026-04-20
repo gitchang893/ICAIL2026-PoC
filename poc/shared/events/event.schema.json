@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/event.schema.json",
+  "title": "Governance Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "event_type",
+    "series_id",
+    "risk_tier",
+    "timestamp",
+    "actor_type",
+    "actor_id",
+    "system_id",
+    "system_version",
+    "approved_boundary_reference",
+    "related_state",
+    "status",
+    "linked_evidence_ids",
+    "notes"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "DEPLOYMENT_REQUESTED",
+        "DEPLOYMENT_APPROVED",
+        "DEPLOYMENT_DENIED",
+        "DEPLOYMENT_ACTIVATED",
+        "DEPLOYMENT_SUSPENDED",
+        "DEPLOYMENT_TERMINATED",
+        "MATERIAL_CHANGE_SUBMITTED",
+        "MATERIAL_CHANGE_APPROVED",
+        "MATERIAL_CHANGE_REJECTED",
+        "MATERIAL_CHANGE_DEPLOYED",
+        "EXPANSION_REQUESTED",
+        "EXPANSION_APPROVED",
+        "INCIDENT_REPORTED",
+        "INCIDENT_CLASSIFIED",
+        "INCIDENT_ESCALATED",
+        "INCIDENT_RESOLVED",
+        "OVERRIDE_EXECUTED",
+        "SUSPENSION_EXECUTED",
+        "RECLASSIFICATION_TRIGGERED",
+        "RECLASSIFICATION_REVIEW_STARTED",
+        "RECLASSIFICATION_APPROVED",
+        "RECLASSIFICATION_REJECTED",
+        "AUDIT_EXPORT_REQUESTED",
+        "INDEPENDENT_REVIEW_REQUESTED",
+        "USER_NOTICE_DELIVERED",
+        "SCOPE_DOCUMENT_UPDATED",
+        "WORKFLOW_DEPENDENCE_ALERT",
+        "LIMITATION_NOTICE_ACKNOWLEDGED",
+        "REACTIVATION_REQUESTED",
+        "REACTIVATION_APPROVED",
+        "TRIGGER_EVENT_CONFIRMED"
+      ]
+    },
+    "series_id": {
+      "type": "string",
+      "enum": ["SeriesA", "SeriesB", "SeriesC"]
+    },
+    "risk_tier": {
+      "type": "string",
+      "enum": ["high", "limited", "minimal"]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actor_type": {
+      "type": "string",
+      "enum": ["human", "system", "service", "vendor"]
+    },
+    "actor_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "approved_boundary_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "related_state": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "pending_review",
+        "in_progress",
+        "resolved",
+        "closed",
+        "escalated"
+      ]
+    },
+    "linked_evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

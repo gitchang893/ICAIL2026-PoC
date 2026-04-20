@@ -1,0 +1,73 @@
+{
+  "series_id": "SeriesA",
+  "series_name": "Urban Ride-Hailing",
+  "risk_tier": "high",
+  "clause_formula": "Cbase ∪ Chigh",
+  "governance_profile": "high_risk_alignment",
+  "status": "draft",
+  "approved_use_case_boundary": {
+    "use_case": "Level-4 autonomous taxi operations in dense urban environments",
+    "operational_design_domain": {
+      "geography": [],
+      "service_hours": [],
+      "weather_conditions": [],
+      "road_types": [],
+      "speed_constraints": [],
+      "traffic_conditions": []
+    },
+    "external_effects_allowed": true,
+    "customer_facing": true,
+    "rights_affecting": true,
+    "autonomy_level": "L4",
+    "prohibited_uses": [
+      "operation outside approved ODD",
+      "unapproved service-area expansion",
+      "manual override disablement",
+      "deployment without gate approval"
+    ]
+  },
+  "responsible_personnel": {
+    "operations_manager": null,
+    "safety_officer": null,
+    "human_oversight_officer": null,
+    "incident_response_lead": null
+  },
+  "required_controls": {
+    "deployment_gate": true,
+    "expansion_gate": true,
+    "reactivation_gate": true,
+    "trigger_action_evidence": true,
+    "audit_readiness": true,
+    "independent_review": true
+  },
+  "system_context": {
+    "system_id": "autonomy_stack",
+    "system_version": null,
+    "provider": null,
+    "vehicle_platform": null,
+    "remote_assistance_enabled": true
+  },
+  "logging_profile": {
+    "baseline_logging": true,
+    "enhanced_evidence_bundles": true,
+    "telemetry_required": true,
+    "sensor_artifacts_required": true,
+    "retention_profile": "high"
+  },
+  "reclassification_rules": {
+    "upward_reclassification_possible": false,
+    "downward_reclassification_possible": true,
+    "requires_formal_review": true
+  },
+  "document_refs": {
+    "rider": "docs/series_a-urban-ride-hailing-chigh-add-on.md",
+    "cbase": "docs/common-cbase-ai-governance-rider.md",
+    "state_machine": "docs/state-machines.md",
+    "evidence_model": "docs/evidence-model.md"
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "notes": "High-risk urban autonomous ride-hailing series."
+  }
+}

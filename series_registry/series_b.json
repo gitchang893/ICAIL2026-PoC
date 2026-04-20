@@ -1,0 +1,75 @@
+{
+  "series_id": "SeriesB",
+  "series_name": "Executive Fleet Leasing",
+  "risk_tier": "limited",
+  "clause_formula": "Cbase ∪ Ctransparency",
+  "governance_profile": "limited_risk_transparency",
+  "status": "draft",
+  "approved_use_case_boundary": {
+    "use_case": "AI-assisted scheduling and routing of corporate vehicles",
+    "functions_allowed": [
+      "scheduling",
+      "routing",
+      "allocation",
+      "dispatch_support",
+      "optimization_support"
+    ],
+    "external_effects_allowed": true,
+    "customer_facing": false,
+    "rights_affecting": false,
+    "autonomy_level": "decision_support",
+    "prohibited_uses": [
+      "final rights-affecting determinations",
+      "unreviewed high-impact dispatch decisions",
+      "operation as a high-risk system without reclassification"
+    ]
+  },
+  "responsible_personnel": {
+    "fleet_operations_manager": null,
+    "compliance_liaison": null,
+    "human_supervisory_officer": null
+  },
+  "required_controls": {
+    "deployment_gate": false,
+    "user_notice": true,
+    "scope_documentation": true,
+    "material_change_documentation": true,
+    "workflow_dependence_monitor": true,
+    "reclassification_review": true
+  },
+  "system_context": {
+    "system_id": "fleet_router",
+    "system_version": null,
+    "provider": null,
+    "dispatch_integration_enabled": true
+  },
+  "logging_profile": {
+    "baseline_logging": true,
+    "enhanced_evidence_bundles": false,
+    "notice_logging": true,
+    "dependence_alert_logging": true,
+    "retention_profile": "medium"
+  },
+  "reclassification_rules": {
+    "upward_reclassification_possible": true,
+    "downward_reclassification_possible": false,
+    "requires_formal_review": true,
+    "triggers": [
+      "rights-affecting use",
+      "material workflow dependence",
+      "high-impact external effect",
+      "new legal or compliance sensitivity"
+    ]
+  },
+  "document_refs": {
+    "rider": "docs/series_b-executive-fleet-leasing-ctransparency-add-on.md",
+    "cbase": "docs/common-cbase-ai-governance-rider.md",
+    "state_machine": "docs/state-machines.md",
+    "evidence_model": "docs/evidence-model.md"
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "notes": "Limited-risk executive fleet scheduling and routing series."
+  }
+}

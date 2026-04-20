@@ -8,7 +8,7 @@ Rather than treating AI ethics as a question of explainability alone, it emphasi
 It contains draft legal riders, governance frameworks, and related research materials.
 
 
-- [Series A High-Risk AI Alignment Rider](docs/series-a-high-risk-ai-alignment-rider.md)  
+- [Series A High-Risk AI Alignment Rider](docs/series_a-high-risk-ai-alignment-rider.md)  
   A Delaware Series LLC operating agreement rider for a high-risk AI use case, establishing purpose-binding, human oversight, deployment gates, override and shutdown authority, incident escalation, and organizational accountability.
   
 - [Delaware High-Risk Alignment Rider Draft](docs/delaware-high-risk-ai-alighment-rider.md)  

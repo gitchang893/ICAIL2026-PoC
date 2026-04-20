@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/tae_record.schema.json",
+  "title": "Trigger-Action-Evidence Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tae_id",
+    "series_id",
+    "risk_tier",
+    "trigger",
+    "action",
+    "evidence",
+    "review_status"
+  ],
+  "properties": {
+    "tae_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "series_id": {
+      "type": "string",
+      "const": "SeriesA"
+    },
+    "risk_tier": {
+      "type": "string",
+      "const": "high"
+    },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "timestamp", "description"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "SAFETY_CRITICAL_EVENT",
+            "ODD_DEVIATION",
+            "REGULATOR_REQUEST",
+            "PASSENGER_SAFETY_COMPLAINT",
+            "LAW_ENFORCEMENT_STOP",
+            "EMERGENCY_PATCH_EVENT"
+          ]
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["timestamp", "steps"],
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "vehicle_safe_stop",
+              "service_suspension",
+              "notify_safety_officer",
+              "notify_incident_response_lead",
+              "open_incident_case",
+              "collect_evidence",
+              "request_independent_review",
+              "fleet_withdrawal"
+            ]
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "telemetry_log",
+        "software_version",
+        "review_record"
+      ],
+      "properties": {
+        "telemetry_log": {
+          "type": "string",
+          "minLength": 1
+        },
+        "route_history": {
+          "type": "string"
+        },
+        "software_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sensor_record": {
+          "type": "string"
+        },
+        "intervention_record": {
+          "type": "string"
+        },
+        "review_record": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "pending_reactivation_review",
+        "cleared_for_reactivation",
+        "terminated",
+        "escalated_for_independent_review"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "scenario_id": "scn_series_b_001",
+  "scenario_type": "series_b_workflow_dependence",
+  "description": "Series B routing tool becomes heavily relied upon by dispatch staff.",
+  "payload": {
+    "system_id": "fleet_router_v2",
+    "system_version": "2.4.1",
+    "acceptance_rate_without_edit": 0.94,
+    "review_window_days": 14,
+    "volume_count": 482,
+    "external_effect": true,
+    "notes": "Dispatch team is accepting AI-assisted routes with minimal edits."
+  }
+}

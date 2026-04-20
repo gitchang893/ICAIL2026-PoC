@@ -209,6 +209,9 @@ The checker therefore validates whether the expected evidence artifacts for thes
 - [Evidence Model](docs/evidence-model.md)  
   Defines the evidence objects, storage layers, integrity controls, and export profiles that support the modular rider architecture across Series A, B, and C.
 
+- [Governance Events](docs/governance-events.md)  
+  Defines the shared event taxonomy, lifecycle, and series-specific event profiles that drive the executable governance layer across Series A, B, and C.
+
 ## Rider construction method for EU AI Act-oriented governance
 
 The rider templates in this repository follow a two-layer construction method for operationalizing selected EU AI Act duties into computable governance clauses.

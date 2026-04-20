@@ -1,7 +1,7 @@
 # ICAIL2026-Governance-by-Design
 Companion repository for the ICAIL 2026 paper on Governance-by-Design
 
-# Legal Drafts
+# I. Legal Drafts
 
 This repository explores how Delaware Series LLC structures can serve as purpose-bound governance units for high-risk AI use cases.  
 Rather than treating AI ethics as a question of explainability alone, it emphasizes human authority, controlled deployment, reviewability, and retained organizational responsibility.  
@@ -79,7 +79,7 @@ Accordingly, the operating agreement formulas are expressed as `OAride = Cbase â
 | **Series 3** | [Series C Experimental AI Sandbox Rider](docs/series_c-experimental-ai-sandbox-rider.md) | Experimental, research, testing, red-teaming, benchmarking, prototype, and sandbox use cases | Sandbox isolation, controlled testing, limited data and tool access, transition review, and prevention of premature production deployment | Transition to Series 2 or Series 1, narrowing, or termination of the experiment |
 
 
-# Governance-by-Design PoC
+# II. Governance-by-Design PoC
 
 This repository provides a minimal proof-of-concept (PoC) companion artifact for the ICAIL 2026 paper:
 

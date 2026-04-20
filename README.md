@@ -1,8 +1,16 @@
 # icail2026-governance-by-design
 Companion repository for the ICAIL 2026 paper on Governance-by-Design
 
-## Documents
+## Legal Drafts
 
+This repository explores how Delaware Series LLC structures can serve as purpose-bound governance units for high-risk AI use cases.  
+Rather than treating AI ethics as a question of explainability alone, it emphasizes human authority, controlled deployment, reviewability, and retained organizational responsibility.  
+It contains draft legal riders, governance frameworks, and related research materials.
+
+
+- [Series A High-Risk AI Alignment Rider](docs/series-a-high-risk-ai-alignment-rider.md)  
+  A Delaware Series LLC operating agreement rider for a high-risk AI use case, establishing purpose-binding, human oversight, deployment gates, override and shutdown authority, incident escalation, and organizational accountability.
+  
 - [Delaware High-Risk Alignment Rider Draft](docs/delaware-high-risk-ai-alighment-rider.md)  
   Series-level addendum to a Delaware LLC operating agreement for trace governance,
   evidentiary preservation, purpose-binding, human oversight, and accountability in

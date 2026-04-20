@@ -218,6 +218,9 @@ The checker therefore validates whether the expected evidence artifacts for thes
 - [PoC Change Control Scaffolds](poc/shared/change_control/)  
   Includes initial Python scaffolds for event storage, material change request handling, and approval workflow management in the executable governance layer.
 
+- [PoC Incident and Override Scaffolds](poc/shared/)  
+  Includes initial Python scaffolds for incident severity classification, incident management, and human override recording in the executable governance layer.
+
 ## Rider construction method for EU AI Act-oriented governance
 
 The rider templates in this repository follow a two-layer construction method for operationalizing selected EU AI Act duties into computable governance clauses.

@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/baseline_event.schema.json",
+  "title": "Baseline Evidence Object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_id",
+    "series_id",
+    "series_name",
+    "risk_tier",
+    "event_type",
+    "timestamp",
+    "actor_type",
+    "actor_id",
+    "system_id",
+    "system_version",
+    "approved_boundary_reference",
+    "decision_status",
+    "artifacts",
+    "notes"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "series_id": {
+      "type": "string",
+      "enum": ["SeriesA", "SeriesB", "SeriesC"]
+    },
+    "series_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "risk_tier": {
+      "type": "string",
+      "enum": ["high", "limited", "minimal"]
+    },
+    "event_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actor_type": {
+      "type": "string",
+      "enum": ["human", "system", "service", "vendor"]
+    },
+    "actor_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "approved_boundary_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_status": {
+      "type": "string",
+      "enum": [
+        "pending_review",
+        "approved",
+        "denied",
+        "suspended",
+        "resolved",
+        "blocked_pending_transfer",
+        "review_required"
+      ]
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "created_by": {
+          "type": "string"
+        },
+        "artifact_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "previous_evidence": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+set shell := ["bash", "-cu"]
+
+python := "python3"
+pip := python + " -m pip"
+
+scenario_dir := "poc/scenarios"
+result_dir := "poc/scenarios/results"
+
+default:
+    @just --list
+
+install:
+    {{pip}} install -r requirements.txt
+
+init-dirs:
+    mkdir -p poc/shared/events/indexes
+    mkdir -p poc/shared/evidence_model/records
+    mkdir -p poc/shared/evidence_model/artifacts
+    mkdir -p poc/shared/tier_review/reviews
+    mkdir -p poc/shared/change_control/change_requests/indexes
+    mkdir -p poc/shared/incidents/cases
+    mkdir -p poc/shared/incidents/indexes
+    mkdir -p poc/shared/overrides/records
+    mkdir -p poc/shared/overrides/indexes
+    mkdir -p poc/series_a/gates
+    mkdir -p poc/series_b/dependence
+    mkdir -p poc/series_c/promotion_blocks
+    mkdir -p {{result_dir}}
+
+check:
+    {{python}} poc/shared/policy_engine/tier_policy.py
+    {{python}} poc/shared/tier_review/tier_review_service.py || true
+    {{python}} poc/shared/events/event_writer.py
+    {{python}} poc/shared/evidence_model/writers/artifact_linker.py
+    {{python}} poc/shared/change_control/change_request.py
+    {{python}} poc/shared/change_control/approval_flow.py || true
+    {{python}} poc/shared/incidents/severity_rules.py
+    {{python}} poc/shared/incidents/incident_service.py
+    {{python}} poc/shared/overrides/override_service.py
+    {{python}} poc/series_a/deployment_gatekeeper.py
+    {{python}} poc/series_b/workflow_dependence_monitor.py
+    {{python}} poc/series_c/promotion_blocker.py
+
+scenario-a: init-dirs
+    {{python}} poc/run_scenario.py {{scenario_dir}}/series_a_deployment_request.json --write-summary
+
+scenario-b: init-dirs
+    {{python}} poc/run_scenario.py {{scenario_dir}}/series_b_routing_dependence_drift.json --write-summary
+
+scenario-c: init-dirs
+    {{python}} poc/run_scenario.py {{scenario_dir}}/series_c_customer_facing_promotion_attempt.json --write-summary
+
+scenarios: scenario-a scenario-b scenario-c
+
+summary:
+    @echo "Scenario result files:"
+    @ls -1 {{result_dir}}/*.json 2>/dev/null || echo "  (none)"
+
+clean-results:
+    rm -f {{result_dir}}/*.json

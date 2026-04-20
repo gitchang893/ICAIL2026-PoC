@@ -1,8 +1,8 @@
-# Delaware High-Risk Alignment Rider
+# Delaware High-Risk AI Alignment Rider
 
 ## Series-Level Addendum to Limited Liability Operating Agreement
 
-This Delaware High-Risk Alignment Rider (this “Rider”) is adopted as an Exhibit to, and forms part of, the Limited Liability Operating Agreement of **[MASTER LLC NAME]**, a Delaware limited liability company (the “Company”), effective as of **[DATE]** (the “LLC Agreement”), and applies solely with respect to **[NAME OF SERIES]**, a **[protected series / registered series]** of the Company (the “Series”).
+This Delaware High-Risk AI Alignment Rider (this “Rider”) is adopted as an Exhibit to, and forms part of, the Limited Liability Operating Agreement of **[MASTER LLC NAME]**, a Delaware limited liability company (the “Company”), effective as of **[DATE]** (the “LLC Agreement”), and applies solely with respect to **[NAME OF SERIES]**, a **[protected series / registered series]** of the Company (the “Series”).
 
 In the event of any inconsistency between this Rider and the LLC Agreement, this Rider shall control solely with respect to the Series and solely to the extent of such inconsistency.
 

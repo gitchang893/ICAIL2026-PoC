@@ -221,7 +221,7 @@ The checker therefore validates whether the expected evidence artifacts for thes
 - [PoC Incident and Override Scaffolds](poc/shared/)  
   Includes initial Python scaffolds for incident severity classification, incident management, and human override recording in the executable governance layer.
 
-- [Series Runtime Scaffolds](poc/series_a/), [Series Runtime Scaffolds](poc/series_b/), [Series Runtime Scaffolds](poc/series_c/)  
+- [Series A Runtime Scaffolds](poc/series_a/), [Series B Runtime Scaffolds](poc/series_b/), [Series C Runtime Scaffolds](poc/series_c/)
   Includes initial series-specific Python scaffolds for Series A deployment gates, Series B workflow-dependence monitoring, and Series C promotion blocking.
 
 ## Rider construction method for EU AI Act-oriented governance

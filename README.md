@@ -10,6 +10,12 @@ It contains draft legal riders, governance frameworks, and related research mate
 
 - [Series A High-Risk AI Alignment Rider](docs/series_a-high-risk-ai-alignment-rider.md)  
   A Delaware Series LLC operating agreement rider for a high-risk AI use case, establishing purpose-binding, human oversight, deployment gates, override and shutdown authority, incident escalation, and organizational accountability.
+
+- [Series B Standard-Risk AI Governance Rider](docs/series_b-standard-risk-ai-governance-rider.md)  
+  A Delaware Series LLC rider for standard-risk AI use cases, emphasizing purpose limitation, human supervision, change control, reclassification triggers, and containment of drift into high-risk deployment.
+
+  docs/series_b-standard-risk-ai-governance-rider.md
+
   
 - [Delaware High-Risk Alignment Rider Draft](docs/delaware-high-risk-ai-alighment-rider.md)  
   Series-level addendum to a Delaware LLC operating agreement for trace governance,

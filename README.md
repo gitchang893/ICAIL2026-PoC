@@ -212,6 +212,9 @@ The checker therefore validates whether the expected evidence artifacts for thes
 - [Governance Events](docs/governance-events.md)  
   Defines the shared event taxonomy, lifecycle, and series-specific event profiles that drive the executable governance layer across Series A, B, and C.
 
+- [PoC Policy and Schemas](poc/shared/)  
+  Includes the shared governance policy, event schema, evidence schemas, and initial tier policy logic for the executable PoC governance layer.
+
 ## Rider construction method for EU AI Act-oriented governance
 
 The rider templates in this repository follow a two-layer construction method for operationalizing selected EU AI Act duties into computable governance clauses.

@@ -98,3 +98,44 @@ Its PoC layer must implement all `Cbase` controls plus the `Chigh` controls belo
 ```text id="53169"
 draft -> gated -> active -> trigger_event -> suspended -> reviewed -> reactivated
                                                 \-> terminated
+
+
+## 4. Series B (Executive Fleet Leasing) = `Cbase ∪ Ctransparency`
+
+Series B is the limited-risk tier use case.  
+Its PoC layer must implement all `Cbase` controls plus the `Ctransparency` controls below.
+
+### 4.1 Ctransparency Clause-to-Control Mapping
+
+| Clause | Legal Function | Control Object / Service | Trigger | Output / Evidence |
+|---|---|---|---|---|
+| `Ctransparency §2.1 User Notice` | Informs users that outputs are AI-assisted | `user_notice_service` | user login, dashboard load, workflow entry | notice delivery log |
+| `Ctransparency §2.2 No Implied Finality` | Prevents users from treating outputs as self-authorizing | `ui_guardrails` + workflow flags | schedule/route acceptance event | human review confirmation |
+| `Ctransparency §3.1 Scope Documentation` | Documents approved purpose and limits | `document_store` | series activation or update | scope documentation record |
+| `Ctransparency §3.2 Documentation of Material Changes` | Records changes affecting transparency and operation | `change_control_service` + `document_store` | approved material change | updated change log |
+| `Ctransparency §3.3 Workflow Dependence Documentation` | Tracks increasing operational dependence on AI outputs | `workflow_dependence_monitor` | repeated reliance threshold reached | dependence review memo |
+| `Ctransparency §4.1 No High-Risk Drift` | Prevents migration into rights-affecting use | `tier_review_service` | new decision scope or external effect | reclassification ticket |
+| `Ctransparency §4.2 Reclassification Review` | Requires review if limited-risk use becomes high-impact | `reclassification_review` | trigger from monitor or management | review decision |
+| `Ctransparency §4.3 No Full High-Risk Gatekeeping by Reason of Limited-Risk Status Alone` | Preserves lighter burden unless escalation justified | `tier_policy` | control selection step | applied control profile |
+
+### 4.2 Series B Representative PoC Workflow
+
+**Scenario:** Routing tool becomes heavily relied upon by dispatch staff.
+
+1. `workflow_dependence_monitor` observes increasing acceptance rate without edits
+2. threshold crossed -> generate `DEPENDENCE_ALERT`
+3. `incident_service` or `tier_review_service` opens review ticket
+4. `document_store` updates operational dependence memo
+5. responsible manager decides:
+   - remain limited-risk with extra training
+   - narrow use
+   - trigger reclassification review
+
+### 4.3 Series B State Machine
+
+```text
+draft -> approved -> active -> dependence_alert -> review
+                                 |                 |
+                                 |                 -> remain_B
+                                 |                 -> narrowed
+                                 \-> reclassification_trigger -> transferred

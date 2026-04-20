@@ -1,0 +1,15 @@
+{
+  "scenario_id": "scn_series_c_001",
+  "scenario_type": "series_c_promotion_attempt",
+  "description": "Series C predictive-maintenance model is proposed for customer-facing use.",
+  "payload": {
+    "proposed_use_case": "customer-facing maintenance guarantee service",
+    "actor_id": "product_owner_01",
+    "system_id": "maint_predictor_v1",
+    "system_version": "1.8.0",
+    "customer_facing": true,
+    "rights_affecting": false,
+    "external_effects_allowed": true,
+    "notes": "Attempted direct use of Series C model in customer-facing workflow."
+  }
+}

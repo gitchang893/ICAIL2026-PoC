@@ -7,8 +7,26 @@ This repository explores how Delaware Series LLC structures can serve as purpose
 Rather than treating AI ethics as a question of explainability alone, it emphasizes human authority, controlled deployment, reviewability, and retained organizational responsibility.  
 It contains draft legal riders, governance frameworks, and related research materials.
 
+## Legal Drafts for ICAIL-2026 paper
 
-## Legal Drafts
+- [Series A High-Risk AI Alignment Rider](docs/series_a-urban-ride-hailing-high-risk-rider.md)  
+  A Delaware Series LLC rider for Level-4 autonomous urban ride-hailing, implementing high-risk controls through oversight gates, audit readiness, and trigger-action-evidence clauses.
+
+- [Series B Limited-Risk AI Transparency Rider](docs/series_b-executive-fleet-leasing-limited-risk-rider.md)  
+  A Delaware Series LLC rider for AI-assisted executive fleet scheduling and routing, combining baseline governance with transparency, user notice, and documentation duties.
+
+- [Series C Minimal-Risk AI Baseline Governance Rider](docs/series_c-predictive-maintenance-minimal-risk-rider.md)  
+  A Delaware Series LLC rider for internal predictive maintenance models, preserving baseline logging, change control, and accountability with minimal governance overhead.
+
+## Series Structure Overview
+
+| Series | Use Case | Risk Tier | Operating Agreement Formula | Core Rider Logic |
+|---|---|---|---|---|
+| **Series A** | Urban Ride-Hailing | **High-Risk** | `OAride = Cbase ∪ Chigh` | Oversight gates, trigger-action-evidence clauses, audit readiness, evidence preservation, suspension/reactivation controls |
+| **Series B** | Executive Fleet Leasing | **Limited-Risk** | `OAfleet = Cbase ∪ Ctransparency` | Baseline governance plus user notice, documentation, transparency, and reclassification safeguards |
+| **Series C** | Predictive Maintenance | **Minimal-Risk** | `OAmaint = Cbase only` | Baseline logging, change control, incident escalation, and accountability with minimal overhead |
+
+## Additional Legal Drafts
 
 - [Series A High-Risk AI Alignment Rider](docs/series_a-high-risk-ai-alignment-rider.md)  
   A Delaware Series LLC operating agreement rider for a high-risk AI use case, establishing purpose-binding, human oversight, deployment gates, override and shutdown authority, incident escalation, and organizational accountability.
@@ -19,6 +37,11 @@ It contains draft legal riders, governance frameworks, and related research mate
 - [Series C Experimental AI Sandbox Rider](docs/series_c-experimental-ai-sandbox-rider.md)  
   A Delaware Series LLC rider for experimental and sandbox AI use cases, emphasizing purpose limitation, sandbox isolation, human supervision, transition review, and prevention of premature production deployment.
 
+  - [Delaware High-Risk Alignment Rider Draft](docs/delaware-high-risk-ai-alighment-rider.md)  
+  Series-level addendum to a Delaware LLC operating agreement for trace governance,
+  evidentiary preservation, purpose-binding, human oversight, and accountability in
+  AI-assisted and agentic operations.
+
 ## Series Structure Overview
 
 | Series | Rider | Primary Use Case | Core Governance Function | Escalation Path |
@@ -27,12 +50,6 @@ It contains draft legal riders, governance frameworks, and related research mate
 | **Series B** | [Series B Standard-Risk AI Governance Rider](docs/series_b-standard-risk-ai-governance-rider.md) | Standard-risk AI use cases such as drafting, summarization, workflow support, and internal operational assistance | Purpose limitation, human supervision, change control, reclassification triggers, and containment of drift into high-risk deployment | Reclassification to heightened governance or transfer to another series |
 | **Series C** | [Series C Experimental AI Sandbox Rider](docs/series_c-experimental-ai-sandbox-rider.md) | Experimental, research, testing, red-teaming, benchmarking, prototype, and sandbox use cases | Sandbox isolation, controlled testing, limited data and tool access, transition review, and prevention of premature production deployment | Transition to Series B or Series A, narrowing, or termination of the experiment |
 
-## Additional Legal Drafts
-
-- [Delaware High-Risk Alignment Rider Draft](docs/delaware-high-risk-ai-alighment-rider.md)  
-  Series-level addendum to a Delaware LLC operating agreement for trace governance,
-  evidentiary preservation, purpose-binding, human oversight, and accountability in
-  AI-assisted and agentic operations.
 
 # Governance-by-Design PoC
 

@@ -26,6 +26,28 @@ It contains draft legal riders, governance frameworks, and related research mate
 | **Series B** | Executive Fleet Leasing | **Limited-Risk** | `OAfleet = Cbase ∪ Ctransparency` | Baseline governance plus user notice, documentation, transparency, and reclassification safeguards |
 | **Series C** | Predictive Maintenance | **Minimal-Risk** | `OAmaint = Cbase only` | Baseline logging, change control, incident escalation, and accountability with minimal overhead |
 
+## Re-Factoring Legal Drafts for ICAIL-2026 Paper
+
+- [Common Cbase AI Governance Rider](docs/common-cbase-ai-governance-rider.md)  
+  A baseline Delaware Series LLC governance rider providing common clauses for purpose limitation, human responsibility, change control, baseline logging, and incident escalation across AI-related series.
+
+- [Series A Chigh Add-On](docs/series_a-urban-ride-hailing-chigh-add-on.md)  
+  A high-risk add-on for Level-4 autonomous urban ride-hailing, implementing oversight gates, trigger-action-evidence duties, audit readiness, and reactivation controls.
+
+- [Series B Ctransparency Add-On](docs/series_b-executive-fleet-leasing-ctransparency-add-on.md)  
+  A limited-risk add-on for AI-assisted executive fleet scheduling and routing, adding user notice, internal documentation, transparency, and reclassification safeguards.
+
+- [Series C Cbase Designation Notice](docs/series_c-predictive-maintenance-cbase-designation.md)  
+  A minimal-risk designation notice for internal predictive maintenance, applying Cbase only with no additional high-risk or transparency supplements.
+
+## Series Structure Overview
+
+| Series | Use Case | Risk Tier | Formula | Clause Set |
+|---|---|---|---|---|
+| **Series A** | Urban Ride-Hailing | **High-Risk** | `OAride = Cbase ∪ Chigh` | Baseline governance plus oversight gates, trigger-action-evidence obligations, audit readiness, and reactivation controls |
+| **Series B** | Executive Fleet Leasing | **Limited-Risk** | `OAfleet = Cbase ∪ Ctransparency` | Baseline governance plus user notice, documentation, transparency, and reclassification safeguards |
+| **Series C** | Predictive Maintenance | **Minimal-Risk** | `OAmaint = Cbase only` | Baseline governance only, with minimal overhead and preserved logging/accountability expectations |
+
 ## Additional Legal Drafts
 
 - [Series 1 High-Risk AI Alignment Rider](docs/series_a-high-risk-ai-alignment-rider.md)  

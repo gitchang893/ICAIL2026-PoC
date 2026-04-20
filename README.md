@@ -226,6 +226,9 @@ The checker therefore validates whether the expected evidence artifacts for thes
 
 - Scenario replay: [Series A deployment gate](poc/scenarios/series_a_deployment_request.json), [Series B dependence drift](poc/scenarios/series_b_routing_dependence_drift.json), [Series C promotion attempt](poc/scenarios/series_c_customer_facing_promotion_attempt.json), and [runner](poc/run_scenario.py)
 
+- [Makefile](Makefile), [justfile](justfile), and [requirements.txt](requirements.txt)  
+  Minimal project tooling for installing dependencies, initializing PoC directories, and replaying Series A, B, and C governance scenarios.
+
 ## How to Run
 
 ```bash
@@ -234,11 +237,22 @@ python poc/run_scenario.py poc/scenarios/series_b_routing_dependence_drift.json 
 python poc/run_scenario.py poc/scenarios/series_c_customer_facing_promotion_attempt.json --write-summary
 ```
 
+### Makefile
+
 ```bash
 make install
 make init-dirs
 make scenarios
 make summary
+```
+
+### Justfile
+
+```bash
+just install
+just init-dirs
+just scenarios
+just summary
 ```
 
 ## Rider construction method for EU AI Act-oriented governance

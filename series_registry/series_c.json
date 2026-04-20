@@ -1,0 +1,71 @@
+{
+  "series_id": "SeriesC",
+  "series_name": "Predictive Maintenance",
+  "risk_tier": "minimal",
+  "clause_formula": "Cbase only",
+  "governance_profile": "minimal_risk_baseline",
+  "status": "draft",
+  "approved_use_case_boundary": {
+    "use_case": "Internal ML-based prediction of component failure using sensor data",
+    "functions_allowed": [
+      "failure_forecasting",
+      "maintenance_planning_support",
+      "internal operational analytics"
+    ],
+    "external_effects_allowed": false,
+    "customer_facing": false,
+    "rights_affecting": false,
+    "autonomy_level": "internal_analytics",
+    "prohibited_uses": [
+      "customer-facing deployment",
+      "eligibility or rights-affecting use",
+      "external commercialization without reclassification"
+    ]
+  },
+  "responsible_personnel": {
+    "maintenance_systems_manager": null,
+    "compliance_or_operations_liaison": null
+  },
+  "required_controls": {
+    "deployment_gate": false,
+    "user_notice": false,
+    "scope_documentation": true,
+    "material_change_documentation": true,
+    "workflow_dependence_monitor": false,
+    "reclassification_review": true
+  },
+  "system_context": {
+    "system_id": "maint_predictor",
+    "system_version": null,
+    "provider": null,
+    "sensor_data_only": true
+  },
+  "logging_profile": {
+    "baseline_logging": true,
+    "enhanced_evidence_bundles": false,
+    "minimal_logging_profile": true,
+    "retention_profile": "low"
+  },
+  "reclassification_rules": {
+    "upward_reclassification_possible": true,
+    "downward_reclassification_possible": false,
+    "requires_formal_review": true,
+    "triggers": [
+      "customer-facing deployment",
+      "external operational reliance",
+      "rights-affecting use",
+      "material expansion beyond internal maintenance"
+    ]
+  },
+  "document_refs": {
+    "rider": "docs/series_c-predictive-maintenance-cbase-designation.md",
+    "cbase": "docs/common-cbase-ai-governance-rider.md",
+    "state_machine": "docs/state-machines.md",
+    "evidence_model": "docs/evidence-model.md"
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "notes": "Minimal-risk internal predictive maintenance series."
+  }
+}

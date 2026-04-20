@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+.venv/
+venv/
+env/
+
+# Tooling / test caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local runtime outputs
+poc/scenarios/results/*.json
+
+# Generated event indexes
+poc/shared/events/indexes/*.json
+
+# Generated evidence records and imported artifacts
+poc/shared/evidence_model/records/*.json
+poc/shared/evidence_model/artifacts/*
+
+# Keep schema files and writer code tracked
+!poc/shared/evidence_model/schemas/
+!poc/shared/evidence_model/schemas/*.json
+!poc/shared/evidence_model/writers/
+!poc/shared/evidence_model/writers/*.py
+
+# Generated tier review outputs
+poc/shared/tier_review/reviews/*.json
+
+# Generated change-control data
+poc/shared/change_control/change_requests/**/*.json
+!poc/shared/change_control/change_requests/indexes/
+poc/shared/change_control/change_requests/indexes/*.json
+poc/shared/change_control/approvals/*.json
+
+# Generated incident data
+poc/shared/incidents/cases/*.json
+poc/shared/incidents/indexes/*.json
+
+# Generated override data
+poc/shared/overrides/records/*.json
+poc/shared/overrides/indexes/*.json
+
+# Generated Series A / B / C runtime outputs
+poc/series_a/gates/*.json
+poc/series_b/dependence/*.json
+poc/series_c/promotion_blocks/*.json
+
+# Optional logs
+*.log

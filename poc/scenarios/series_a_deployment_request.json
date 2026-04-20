@@ -1,0 +1,32 @@
+{
+  "scenario_id": "scn_series_a_001",
+  "scenario_type": "series_a_deployment_gate",
+  "description": "Initial Series A deployment gate request for Level-4 urban ride-hailing.",
+  "payload": {
+    "requested_by": "ops_manager_01",
+    "system_version": "5.1.0",
+    "odd_snapshot": {
+      "geography": ["urban_core_zone_1"],
+      "service_hours": ["06:00-23:00"],
+      "weather_conditions": ["clear", "light_rain"],
+      "road_types": ["city_streets"],
+      "speed_constraints": ["<=45mph"],
+      "traffic_conditions": ["dense_urban"]
+    },
+    "responsible_personnel": {
+      "operations_manager": "ops_manager_01",
+      "safety_officer": "safety_officer_01",
+      "human_oversight_officer": "oversight_01",
+      "incident_response_lead": "incident_lead_01"
+    },
+    "legal_checks": {
+      "city_permit_valid": true,
+      "insurance_valid": true,
+      "service_zone_authorized": true
+    },
+    "emergency_controls_ready": true,
+    "evidence_readiness": true,
+    "deployment_mode": "deployment",
+    "notes": "Initial go-live request for approved urban ODD."
+  }
+}

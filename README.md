@@ -1,6 +1,13 @@
 # icail2026-governance-by-design
 Companion repository for the ICAIL 2026 paper on Governance-by-Design
 
+## Documents
+
+- [Delaware High-Risk AI Alignment Rider Draft](docs/delaware-high-risk-ai-alignment-rider.md)  
+  Series-level addendum to a Delaware LLC operating agreement for trace governance,
+  evidentiary preservation, purpose-binding, human oversight, and accountability in
+  AI-assisted and agentic operations.
+
 # Governance-by-Design PoC
 
 This repository provides a minimal proof-of-concept (PoC) companion artifact for the ICAIL 2026 paper:

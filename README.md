@@ -9,7 +9,7 @@ The repository currently contains three connected layers:
 
 1. **Legal design artifacts** for the ICAIL 2026 paper  
 2. **Modular clause architecture** for risk-tiered governance  
-3. **Computational PoC scaffolds** for executable governance-by-design  
+3. **Computational PoC modules** for executable governance-by-design  
 
 ---
 
@@ -48,7 +48,7 @@ Use these if you want to understand:
 - governance events;
 - evidence objects;
 - state machines;
-- runtime scaffolds;
+- runtime modules;
 - scenario replay.
 
 ### Recommended reading paths
@@ -69,7 +69,7 @@ Start here:
 3. **Governance Events**
 4. **Evidence Model**
 5. **Scenario replay files**
-6. **Runtime scaffolds**
+6. **Runtime modules**
 
 ---
 
@@ -225,18 +225,6 @@ python checker/reasoning_trace_checker.py traces/reasoning_trace_example.json
 python checker/series_rider_checker.py traces/series_a_incident_trace.json
 python checker/series_rider_checker.py traces/series_b_transparency_trace.json
 python checker/series_rider_checker.py traces/series_c_internal_monitoring_trace.json
-
-```
-
-### 6.4 Running the Legacy PoC
-
-```bash
-python checker/trace_checker.py traces/mobility_incident_trace.json
-python checker/trace_checker.py traces/normal_operation_trace.json
-python checker/reasoning_trace_checker.py traces/reasoning_trace_example.json
-python checker/series_rider_checker.py traces/series_a_incident_trace.json
-python checker/series_rider_checker.py traces/series_b_transparency_trace.json
-python checker/series_rider_checker.py traces/series_c_internal_monitoring_trace.json
 ```
 
 ---
@@ -269,24 +257,24 @@ The repository is also evolving toward a more modular PoC architecture that sepa
 - [Clause-to-Control Matrix](docs/clause-to-control-matrix.md)  
   Maps the modular rider architecture (`Cbase`, `Chigh`, and `Ctransparency`) to an executable PoC governance layer, including controls, events, evidence objects, and state transitions for Series A, B, and C.
 
-### 7.2 Current PoC Scaffolds
+### 7.2 Current PoC Modules
 
 #### Shared layer
-- [PoC Policy and Schemas](poc/shared/)  
+- [Shared policy and schema files](poc/shared/)  
   Shared governance policy, event schema, evidence schemas, and tier policy logic.
 
-- [PoC Change Control Scaffolds](poc/shared/change_control/)  
-  Event storage, material change request handling, and approval workflow scaffolds.
+- [Change-control modules](poc/shared/change_control/)  
+  Event storage, material change request handling, and approval workflow modules.
 
-- [PoC Incident and Override Scaffolds](poc/shared/)  
-  Incident severity classification, incident management, and human override scaffolds.
+- [Incident and override modules](poc/shared/)  
+  Incident severity classification, incident management, and human override modules.
 
 #### Series-specific layer
-- [Series A Runtime Scaffolds](poc/series_a/)
-- [Series B Runtime Scaffolds](poc/series_b/)
-- [Series C Runtime Scaffolds](poc/series_c/)
+- [Series A runtime modules](poc/series_a/)
+- [Series B runtime modules](poc/series_b/)
+- [Series C runtime modules](poc/series_c/)
 
-These contain initial service scaffolds for:
+These contain initial implementation modules for:
 
 - Series A deployment gating;
 - Series B workflow-dependence monitoring;
@@ -474,4 +462,5 @@ JUne 8-12, 2026, Singapore.
 
 ## 15. Last Updated
 
-Last updated: 2026-04-20 13:29 JST
+Last updated: 2026-04-23 18:31 JST
+

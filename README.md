@@ -280,12 +280,6 @@ These contain initial implementation modules for:
 - Series B workflow-dependence monitoring;
 - Series C promotion blocking.
 
-#### Scenario replay
-- [Series A deployment gate](poc/scenarios/series_a_deployment_request.json)
-- [Series B dependence drift](poc/scenarios/series_b_routing_dependence_drift.json)
-- [Series C promotion attempt](poc/scenarios/series_c_customer_facing_promotion_attempt.json)
-- [Scenario runner](poc/run_scenario.py)
-
 ### 7.3 Running the Modular PoC
 
 ```bash
@@ -320,7 +314,44 @@ just summary
 
 ---
 
-## 8. Current Refactoring Status
+## 8. Example Scenarios
+
+The repository includes both legacy trace-based scenarios and modular runtime-oriented scenario inputs.
+
+### 8.1 Legacy trace-based scenarios
+
+- `traces/mobility_incident_trace.json`  
+  A high-risk mobility incident with stop-order, override-attempt, corrective-action, and reporting artifacts.
+
+- `traces/normal_operation_trace.json`  
+  A normal compliant high-risk deployment with logging, verification, and audit-related artifacts.
+
+- `traces/reasoning_trace_example.json`  
+  A reasoning-trace preservation workflow for a safety-critical LLM-agent decision process.
+
+- `traces/series_a_incident_trace.json`  
+  A Series A incident scenario for high-risk autonomous mobility.
+
+- `traces/series_b_transparency_trace.json`  
+  A Series B controlled-deployment scenario centered on transparency and governance review.
+
+- `traces/series_c_internal_monitoring_trace.json`  
+  A Series C internal monitoring scenario centered on anomaly review and maintenance accountability.
+
+### 8.2 Modular runtime-oriented scenarios
+
+- [Series A deployment gate](poc/scenarios/series_a_deployment_request.json)  
+  A deployment-gate scenario for a high-risk urban autonomous mobility series.
+
+- [Series B dependence drift](poc/scenarios/series_b_routing_dependence_drift.json)  
+  A workflow-dependence scenario in which operational reliance on AI-assisted routing increases.
+
+- [Series C promotion attempt](poc/scenarios/series_c_customer_facing_promotion_attempt.json)  
+  A promotion-block scenario in which a minimal-risk internal model is proposed for customer-facing use.
+
+---
+
+## 9. Current Refactoring Status
 
 The repository currently contains both:
 
@@ -329,7 +360,7 @@ The repository currently contains both:
 
 This is intentional during the transition period.
 
-### Current design direction
+### 9.1 Current design direction
 
 The modular PoC is moving toward clearer separation between:
 
@@ -350,11 +381,11 @@ For now, the repository keeps these materials together because the legal design 
 
 ---
 
-## 9. Rider Construction Method
+## 10. Rider Construction Method
 
 The rider templates in this repository follow a two-layer construction method for operationalizing selected EU AI Act duties into computable governance clauses.
 
-### 9.1 Fundamental (common) layer
+### 10.1 Fundamental (common) layer
 
 This layer contains **fundamental governance clauses** that apply across all series, regardless of risk tier. These clauses establish the baseline organizational infrastructure required for computable governance, including:
 
@@ -367,7 +398,7 @@ Conceptually, this corresponds to the shared governance substrate:
 
 `Cbase`
 
-### 9.2 Risk-based (series-specific) layer
+### 10.2 Risk-based (series-specific) layer
 
 This layer contains **risk-based rider modules** added according to the regulatory and operational profile of a given series.
 
@@ -377,7 +408,7 @@ This yields three series-specific patterns:
 - **Series B / Ctransparency**: transparency notice, approval logging, escalation, and periodic governance review;
 - **Series C / Cbase only**: lightweight internal logging, update traceability, anomaly review, and maintenance-action accountability.
 
-### 9.3 Construction principle
+### 10.3 Construction principle
 
 **Series-specific Rider = Fundamental Governance Layer + Risk-Based Layer**
 
@@ -393,29 +424,31 @@ where:
 
 ---
 
-## 10. Suggested Use of This Repository
+## 11. Suggested Use of This Repository
 
 ### If your focus is legal design
 Read:
 
 - Section 3
 - Section 4
-- Section 9
+- Section 10
 
 ### If your focus is the original paper companion PoC
 Read:
 
 - Section 6
+- Section 8.1
 
 ### If your focus is the current modular implementation direction
 Read:
 
 - Section 7
-- Section 8
+- Section 8.2
+- Section 9
 
 ---
 
-## 11. Scope and Limitations
+## 12. Scope and Limitations
 
 This repository is a research artifact intended to support reproducibility of the paper’s formal model, rider template, and case-study workflow.
 
@@ -430,7 +463,7 @@ Rather, it is an institutional-design and governance-by-design research artifact
 
 ---
 
-## 12. Relation to the Paper
+## 13. Relation to the Paper
 
 This repository corresponds to the paper’s:
 
@@ -442,7 +475,7 @@ This repository corresponds to the paper’s:
 
 ---
 
-## 13. Citation
+## 14. Citation
 
 If you use or discuss this repository, please cite the ICAIL 2026 paper.
 
@@ -453,14 +486,14 @@ June 8-12, 2026, Singapore.
 
 ---
 
-## 14. Authors
+## 15. Authors
 
 - Hiroshi G. Okuno
 - Mayumi J. Okuno
 
 ---
 
-## 15. Last Updated
+## 16. Last Updated
 
-Last updated: 2026-04-23 18:31 JST
+Last updated: 2026-04-23 20:58 JST
 

@@ -449,7 +449,7 @@ If you use or discuss this repository, please cite the ICAIL 2026 paper.
 Hiroshi G. Okuno and Mayumi J. Okuno,
 *Governance-by-Design for AI Compliance: Compiling EU AI Act Duties into Computable Operating-Agreement Clauses*,
 *Proceedings of the 21st International Conference on Artificial Intelligence and Law (ICAIL '26)*, 
-JUne 8-12, 2026, Singapore.
+June 8-12, 2026, Singapore.
 
 ---
 
